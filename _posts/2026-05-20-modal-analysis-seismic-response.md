@@ -5,6 +5,7 @@ date: 2026-05-20 10:00:00 +0800
 description: 五层剪切型建筑：静力分析→模态分析→地震响应的完整结构动力学数值研究（SOR/反幂法/RK4）
 tags: 数值分析 模态分析 结构动力学 Runge-Kutta
 categories: 课程项目
+_styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"
 ---
 
 # 工程数值分析大作业报告

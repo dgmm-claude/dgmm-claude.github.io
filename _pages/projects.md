@@ -10,6 +10,17 @@ horizontal: false
 ---
 
 <!-- pages/projects.md -->
+<style>
+  /* 统一项目卡片封面图为 16:9，裁剪填充，避免源图宽高比不一致导致卡片高度参差 */
+  .card .card-img-top,
+  .projects .card-img-top {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background-color: #f2f2f2;
+  }
+</style>
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->

@@ -5,6 +5,7 @@ date: 2026-04-10 10:00:00 +0800
 description: 用非圆齿轮替代直齿轮，让传动比跟随人体发力曲线，提升手摇发电机效率的完整工程报告
 tags: 非圆齿轮 机械设计 数据驱动 效率优化
 categories: 工程项目
+_styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"
 ---
 
 # 基于非圆齿轮的手摇发电机效率优化项目报告
