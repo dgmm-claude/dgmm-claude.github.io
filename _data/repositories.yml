@@ -1,0 +1,10 @@
+github_users:
+  - dgmm-claude
+
+repo_description_lines_max: 2
+
+github_repos:
+  - dgmm-claude/FC2203S-
+  # 添加你其他开源仓库，例如：
+  # - dgmm-claude/wireless-imu
+  # - dgmm-claude/unitree-g1-teleop
