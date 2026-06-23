@@ -28,6 +28,7 @@ _GPA 3.697 · Rank 5 (Top 10%) · CET-6 570_
 | 项目 / Project | 亮点 / Highlight |
 |---|---|
 | 🦾 **[宇树 G1 上肢 IMU 遥操系统](https://dgmm-claude.github.io/projects/1_unitree_g1_teleop/)** | VQF 九轴融合 + 逆运动学，静态精度 **3.83 mm**（国家级重大项目在申） |
+| 📷 **[ORB-SLAM3 位姿评估](https://dgmm-claude.github.io/projects/2_orbslam3_pose/)** | RealSense D435i 真值系统，静态 **0.37 mm**，与 IMU 方案交叉对比 |
 | 🎯 **[视觉精确制导飞行系统](https://dgmm-claude.github.io/projects/3_vision_guidance/)** | 国家级大创（主持），结题**优秀**，命中精度 **+42.3%** |
 | 📡 **[ESP32 无线 IMU 节点](https://dgmm-claude.github.io/projects/6_wireless_imu/)** | ESP32-C3 + ICM-20948 + VQF，WiFi/UDP，OTA，开源 |
 | 🔌 **[FC2203S 电机半桥驱动](https://github.com/dgmm-claude/FC2203S-)** | 开源硬件（GPL-3.0），BOM 成本约 **¥5** |

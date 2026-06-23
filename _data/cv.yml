@@ -70,6 +70,46 @@ cv:
         highlights:
           - 完整硬件、固件、上位机已开源。
 
+      - company: ORB-SLAM3 末端位姿评估系统
+        position: 独立完成 / 交叉验证真值系统
+        url: /projects/2_orbslam3_pose/
+        start_date: 2026-03
+        end_date: 2026-03
+        summary: >
+          RealSense D435i + ORB-SLAM3 作独立外部真值，与遥操系统双 IMU 方案逐项交叉对比，划清两技术路线适用边界。
+        highlights:
+          - 静态 σ_3D_RMS 0.373 mm（亚毫米级）；五类量化评估 + IMU/SLAM 对比表。
+
+      - company: PCB 焊垫热传导特性研究
+        position: 数学物理方法课程综合项目（独立）
+        url: /projects/9_pcb_thermal/
+        start_date: 2026-01
+        end_date: 2026-02
+        summary: >
+          PDE 建模 + 自研 Python FEM + ANSYS + 实物实验三方交叉验证，7 章 3229 行文档。
+        highlights:
+          - 热孔使时间常数 45.3 s → 8.2 s（5.5×）；自研 FEM 与 ANSYS 对标误差 <2%。
+
+      - company: 非圆齿轮手摇发电机效率优化
+        position: 工程制造课程项目
+        url: /projects/10_noncircular_gear/
+        start_date: 2026-04
+        end_date: 2026-05
+        summary: >
+          实测数据驱动非圆齿轮节曲线优化 + 参数化 DXF 生成 + 3D 打印样件验证。
+        highlights:
+          - 效率波动缩小 ~73%，最低效率 85.67% → 92.86%（+7.19 pp）。
+
+      - company: 工程数值分析（方程求根与结构模态）
+        position: 课程大作业
+        url: /projects/12_numerical_analysis/
+        start_date: 2026-05
+        end_date: 2026-05
+        summary: >
+          非线性求根（GA/PSO）+ 多自由度结构模态与地震响应（SOR / 反幂法 / RK4）。
+        highlights:
+          - SOR 最优 ω≈1.65 使迭代 552 → 105 次；RK4 地震响应误差 0.13 mm。
+
     Honors and Awards:
       - title: 国家级大学生创新训练计划《基于视觉的精确制导飞行系统研究》结题优秀
         summary: 国家级，2025
