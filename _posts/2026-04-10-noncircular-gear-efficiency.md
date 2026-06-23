@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "非圆齿轮手摇发电机效率优化"
+title: "Efficiency Optimization of a Hand-Crank Generator with Non-Circular Gears"
 date: 2026-04-10 10:00:00 +0800
-description: 用非圆齿轮替代直齿轮，让传动比跟随人体发力曲线，提升手摇发电机效率的完整工程报告
+description: "A course project showing how a non-circular gear — whose transmission ratio varies continuously with crank angle — locks the generator operating point into its high-efficiency region instead of sweeping across high and low efficiency each revolution. Driven by measured torque-speed data, the instantaneous optimal ratio is inverted from CSV logs, the pitch curve is designed to mesh with a circular gear, and a parameterized DXF is generated (ezdxf + shapely) for 3D printing. Results: efficiency spread narrowed about 73%, minimum efficiency raised from 85.67% to 92.86%."
 tags: 非圆齿轮 机械设计 数据驱动 效率优化
 categories: 工程项目
 _styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"

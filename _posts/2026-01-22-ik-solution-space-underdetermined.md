@@ -1,9 +1,9 @@
 ---
 layout: post
 featured: true
-title: "为什么「小臂姿态 + 到肩距离」不能唯一定位——IK 解空间推导"
+title: "Why Forearm Pose + Shoulder Distance Cannot Uniquely Locate a Point"
 date: 2026-01-22 21:00:00 +0800
-description: 用严格推导证明：已知小臂姿态、某点到肩距离、大小臂长度，仍无法唯一确定该点位置——解空间是一族而非一点。
+description: "A rigorous derivation showing that knowing the forearm's pose, a point's distance to the shoulder, and the arm lengths still does not uniquely determine the point's 3D position — the solution set is a one-parameter family, not a single point. This underdetermination explains why a pose-only IMU scheme must add extra constraints (multiple IMUs, calibration, magnetometer) to localize. Geometrically the distance constraint is a sphere, the pose a ray, and the arm-length constraint another sphere, whose intersection is generally a curve."
 tags: 逆运动学 数学 解空间 IMU 遥操
 categories: 数学推导
 ---

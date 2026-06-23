@@ -1,9 +1,9 @@
 ---
 layout: post
 featured: true
-title: "实机遥操中的「硬件保护」异常诊断"
+title: "Diagnosing Hardware-Protection Anomalies in Real-Robot Teleoperation"
 date: 2026-06-10 21:00:00 +0800
-description: 宇树 G1 右臂偶发硬件保护——从总电机误差曲线自动标定异常、逐关节归因、PyBullet 复现定位根因，到动态限位修复。
+description: "When the G1 right arm intermittently entered hardware protection during long teleoperation sessions, I built a full diagnostic chain: auto-segmenting anomaly windows from total motor-error peaks (peak times 0.3, over 5 s; two events of 7.2/8.2 s, peak 2.01/1.56 rad), per-joint error attribution (elbow dominates, 40 to 61 percent), PyBullet replay of the anomaly window, and physical scratch evidence — confirming the upper arm hits the mechanical limit before the software limit during elbow-clamp poses. This led to a configuration-dependent dynamic-limit fix and a patent disclosure."
 tags: 机器人 宇树G1 遥操 异常检测 PyBullet
 categories: 工程实践
 _styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"

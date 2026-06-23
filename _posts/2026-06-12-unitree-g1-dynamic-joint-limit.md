@@ -1,9 +1,9 @@
 ---
 layout: post
 featured: true
-title: "宇树 G1 遥操：动态软件限位设计（异常 trilogy 之三）"
+title: "Configuration-Aware Dynamic Joint Limits for Safe Teleoperation"
 date: 2026-06-12 21:00:00 +0800
-description: 承接硬件保护异常诊断，设计依赖关节角的动态软件限位——在撞上机械限位前截断目标角，并上实机缓动验证。
+description: "The fix for the G1 hardware-protection anomaly: instead of a fixed software limit (the union of all reachable ranges — too loose), the limit becomes a function of the other joint angles. Dangerous joints the operator cannot easily feel (e.g. upper-arm yaw) are tightened per configuration, cutting the target angle before the mechanical limit is reached. Collision boundaries are pre-characterized in Isaac Lab / wheel-legged gym and validated on the real robot by creeping to about 0.9 of the limit. Condensed into a patent disclosure; future work extends to full-arm continuous collision-risk modeling."
 tags: 机器人 宇树G1 遥操 安全 动态限位
 categories: 工程实践
 _styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"
@@ -36,12 +36,10 @@ limit(joint_i) = f(joint_j, joint_k, ...)
 
 ## 实机验证
 
-> 插曲：我先让 AI 生成动态限位初版，结果它写错了，只能自己上实机直接调。
-
 验证方法：让机器人**缓动到限位位置附近（约 0.9 倍处）**，实地查看并微调间隙——确认动态限位在撞上机械限位前确实截断，同时不误伤正常动作空间。
 
 ## 产出与后续
 
-这部分已凝练为发明专利交底书《基于多 IMU 遥操作的人形机器人上肢关节目标安全生成与动态限位控制方法及系统》。这是"粗糙但有效"的修复（只扫描大臂、用截断防撞）；若要推广到全臂连续避障，可走向数据驱动的可微风险场（见 [自碰撞避免论文阅读](/blog/2026/humanoid-self-collision-avoidance/)）。
+这部分已凝练为发明专利交底书《基于多 IMU 遥操作的人形机器人上肢关节目标安全生成与动态限位控制方法及系统》。当前方案采用保守的构型相关限位机制（仅扫描大臂、以截断防撞）；后续将扩展至全臂连续碰撞风险建模（见 [自碰撞避免论文阅读](/blog/2026/humanoid-self-collision-avoidance/)）。
 
 > 关联项目：[宇树 G1 上肢 IMU 遥操系统](/projects/1_unitree_g1_teleop/)。

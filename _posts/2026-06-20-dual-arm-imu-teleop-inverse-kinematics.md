@@ -1,9 +1,9 @@
 ---
 layout: post
 featured: true
-title: "双臂 IMU 遥操的逆运动学：从 4 步校准到 5 电机解析解"
+title: "Inverse Kinematics for Dual-Arm IMU Teleoperation: 4-Step Calibration to Analytical 5-DoF Solutions"
 date: 2026-06-20 21:00:00 +0800
-description: 5 个无线 IMU 驱动宇树 G1 双臂——Procrustes 校准对齐坐标系、增量跟踪消除 IMU 漂移、分离旋转轴的解析 IK 解出 5 个关节角。
+description: "The core algorithm of the G1 dual-arm system: turning five wireless-IMU quaternions into 10 robot joint angles in real time. A three-stage pipeline — offline 4-step calibration (Procrustes alignment with SVD plus roll-axis refinement), online incremental tracking that cancels absolute IMU drift, and an analytical IK that decouples rotation axes (Y-component gives shoulder roll, XZ gives pitch; Z gives elbow, XY gives yaw; palm gives wrist roll), each step with dual-solution selection and limit clamping. Smoothed by a 3.5 rad/s rate limit and sent over UDP at 50 Hz."
 tags: 机器人 逆运动学 IMU 宇树G1 遥操 Procrustes
 categories: 技术详解
 ---

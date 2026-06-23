@@ -1,9 +1,9 @@
 ---
 layout: post
 featured: true
-title: "VQF 九轴姿态融合的工程实践"
+title: "VQF 9-Axis Attitude Fusion in Practice"
 date: 2026-02-10 21:00:00 +0800
-description: 为什么遥操系统选 VQF 替代 Madgwick/Mahony——倾斜与航向分离估计、时间常数 τ 的物理意义、陀螺零偏在线补偿与磁力计自适应拒绝。
+description: "Why the teleoperation system chose VQF over Madgwick/Mahony: decoupled inclination/heading estimation, the physical meaning of the time constants tau_acc and tau_mag, online gyroscope-bias compensation, and adaptive magnetic-disturbance rejection. VQF estimates inclination using only the accelerometer (low-pass filtered, parameterized by tau_acc) and heading using only the magnetometer horizontal projection, so the magnetometer never contaminates inclination. Engineering notes: ICM-20948 at 225 Hz with local real-time solving, runtime ellipsoidal magnetometer calibration stored in NVS, and a 6-axis fallback mode."
 tags: IMU VQF 姿态融合 滤波 宇树G1
 categories: 技术详解
 ---

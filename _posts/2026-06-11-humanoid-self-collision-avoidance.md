@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "人形机器人自碰撞避免（SCA）论文阅读"
+title: "Reading: Self-Collision Avoidance for Humanoid Robots"
 date: 2026-06-11 21:00:00 +0800
-description: 为修复实机遥操中的硬件保护问题而做的文献调研：离线 vs 在线 SCA、可微碰撞风险函数、29-DoF 机器人子模块分解与 SVM/NN 方法对比。
+description: "A literature note motivated by the G1 hardware-protection anomaly. Two families of self-collision avoidance (SCA): offline planning (local minima, slow for high-DoF) and online (impedance potential from a simplified convex model, precision-versus-cost tradeoff). The key idea: collision is static given geometry and joint angles, so a differentiable collision-risk function can be learned. A 29-DoF robot is decomposed into submodules, and SVM, CPSP and NN are compared. This points toward a data-driven route beyond the current deterministic dynamic-limit fix."
 tags: 机器人 自碰撞 avoidance 论文阅读 人形
 categories: 论文阅读
 _styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"

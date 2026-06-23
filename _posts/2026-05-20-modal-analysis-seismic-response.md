@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "多自由度结构模态分析与地震动力响应"
+title: "Modal Analysis and Seismic Response of a Multi-DOF Structure"
 date: 2026-05-20 10:00:00 +0800
-description: 五层剪切型建筑：静力分析→模态分析→地震响应的完整结构动力学数值研究（SOR/反幂法/RK4）
+description: "A numerical-analysis course project: a full static, modal, and seismic-response pipeline on a five-story shear-type building. Linear systems solved by SOR (optimal relaxation around 1.65 cuts iterations from 552 to 105); the fundamental frequency found by inverse iteration in 8 steps (1.334 Hz); the first mode carries 84.7% effective mass; seismic response integrated by RK4 with 0.13 mm displacement error. Links SOR convergence, eigenvalue methods, and RK4 integration on one physical system."
 tags: 数值分析 模态分析 结构动力学 Runge-Kutta
 categories: 课程项目
 _styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"
