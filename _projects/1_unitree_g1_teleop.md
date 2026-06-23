@@ -10,7 +10,7 @@ related_publications: false
 
 我在宇树 G1 人形机器人上构建了一套**「感知 — 估计 — 控制 — 安全」完整闭环**的上肢遥操系统：在人体大臂/小臂各固定一个九轴 IMU，经 VQF 姿态融合与逆运动学解算，实时驱动 G1 右臂 4 个关节。项目不止于"能动"，而是沿着精度评估、控制整定、运行安全三条线持续打磨，最终产出 **2 项发明专利交底书**与一份完整学期答辩报告。
 
-> 这是我的主线研究项目。其**感知节点**独立开源为 [ESP32 无线 IMU 节点](/projects/6_wireless_imu/)，其**精度评估**与 [ORB-SLAM3 末端位姿评估系统](/projects/2_orbslam3_pose/) 互为交叉验证。约 **5000 行核心代码**，11 篇技术文档。
+> 这是我的主线研究项目。其**感知节点**独立开源为 [ESP32 无线 IMU 节点](/projects/6_wireless_imu/)，其**精度评估**与 [ORB-SLAM3 末端位姿评估系统](/projects/2_orbslam3_pose/) 互为交叉验证。
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -33,7 +33,7 @@ related_publications: false
 </div>
 <div class="caption">画圆测试四项诊断：拟合圆 R=30.8 mm，平面 RMS=8.83 mm。</div>
 
-## 精度评估（独立设计六类测试）
+## 精度评估（四类测试）
 
 | 测试项目 | 核心指标 | 结果 |
 |---------|---------|------|
@@ -62,7 +62,7 @@ related_publications: false
 </div>
 <div class="caption">左：各关节 best-so-far 代价收敛曲线；右：右臂关键关节默认 PD 与优化 PD 的棒棒糖对比。</div>
 
-**诚实的 Sim-to-Real 结论**（这部分我刻意保留为"发现"而非"战果"，因为它正是本研究最有价值的产出）：
+**Sim-to-Real 结论**（诚实的说，sim2real gap依旧较大）：
 
 1. **仿真内有效**：肩 pitch / 肘 / 腕关节仿真跟踪 RMSE 普遍降到 0.3°–0.7°；但 **shoulder_yaw 仍是瓶颈（1.5°–3.2°）**——它承受最大重力力矩且存在关节耦合。
 2. **Sim-to-Real Gap 显著**：实机 RMSE 是仿真的 **5–10 倍**。
@@ -75,8 +75,6 @@ related_publications: false
     </div>
 </div>
 <div class="caption">各关节仿真 RMSE 与实机 RMSE 对比斜率图：可见两者量级差异与哪些关节迁移有效。</div>
-
-> 详见技术笔记：[实机遥操中的"硬件保护"异常诊断](/blog/2026/unitree-g1-hardware-protection-anomaly/)、[人形机器人自碰撞避免论文阅读](/blog/2026/humanoid-self-collision-avoidance/)。
 
 ## 运行安全：从"硬件保护"异常到动态限位
 
@@ -94,11 +92,12 @@ related_publications: false
 </div>
 <div class="caption">从总误差曲线自动标定的异常时段（红区），肘部电机贡献主导，与 PyBullet 复现的夹肘撞击吻合。</div>
 
+> 详见技术笔记：[实机遥操中的"硬件保护"异常诊断](/blog/2026/unitree-g1-hardware-protection-anomaly/)、[人形机器人自碰撞避免论文阅读](/blog/2026/humanoid-self-collision-avoidance/)。
+
 ## 成果产出
 
-- 📜 **发明专利交底书 ×2**（在申）：
+- **发明专利 ×2**（在申）：
   - 《基于多节点无线 IMU 的机器人上肢遥操作解算方法及系统》——感知与解算主线；
   - 《基于多 IMU 遥操作的人形机器人上肢关节目标安全生成与动态限位控制方法及系统》——运行安全主线。
-- 📊 **学期答辩报告**：含 PyBullet 仿真复现 + G1 实机遥操演示视频，经 Codex 两轮技术审查修订（修正 ICM-20948 规格数据、坐标系量纲、搜索空间维度等 10 项问题）后定稿。
 
-> 技术栈：Python · VQF · Isaac Lab / PyBullet · 贝叶斯优化(GP+EI) · Modbus RTU · OpenGL · UDP ｜ 硬件：宇树 G1 + 2× WT901C485 九轴 IMU
+> 技术栈：Python · VQF · Isaac Lab / PyBullet · 贝叶斯优化(GP+EI) · Modbus RTU · OpenGL · UDP ｜ 硬件：宇树 G1 + 2× ICM20948 九轴 IMU
