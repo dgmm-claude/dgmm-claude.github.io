@@ -4,15 +4,15 @@ title: about
 permalink: /
 nav: true
 nav_order: 1
-subtitle: <a href="https://eie.cqu.edu.cn/">重庆大学 · 国家卓越工程师学院</a> · 机器人工程 · 大三
+subtitle: <a href="https://eie.cqu.edu.cn/">National Excellent Engineer College, Chongqing University</a> · Robotics Engineering · Junior
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>机器人工程 · 大三在读</p>
-    <p>GPA 3.697 / Rank 5 (前 10%)</p>
+    <p>Robotics Engineering · Junior</p>
+    <p>GPA 3.697 / Rank 5 (Top 10%)</p>
     <p>CET-6 570</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -31,46 +31,48 @@ latest_posts:
 
 <div class="lead" markdown="1">
 
-**郑皓文 / Haowen Zheng**
+**Haowen Zheng**
 
 </div>
 
-我是重庆大学国家卓越工程师学院**机器人工程**专业大三本科生，专业排名第 5（前 10%），GPA 3.697，CET-6 570。围绕**机器人系统集成**与**嵌入式系统开发**两条主线，独立完成或深度参与了多项完整工程项目，覆盖从数学建模、算法设计、嵌入式固件开发、PCB 硬件设计到系统集成测试的全链路工程实践。
+Junior undergraduate in **Robotics Engineering** at the National Excellent Engineer College, Chongqing University. Ranked 5th in the major (top 10%), GPA 3.697, CET-6 570.
 
-我的核心竞争力在于**系统级工程能力** —— 能够将问题从物理建模到软硬件实现再到精度评估形成完整闭环。科研兴趣聚焦机器人「**感知 — 估计 — 控制**」闭环，重点关注多源传感器融合、姿态估计、运动控制与人机交互。
+I work across two threads — **robot system integration** and **embedded system development** — and have led or contributed to a number of end-to-end engineering projects spanning mathematical modeling, algorithm design, embedded firmware, PCB hardware, and system-level integration & testing.
 
-> 📄 完整项目经历：[中文版 PDF](/assets/pdf/CV_Zheng_Haowen_CN.pdf) ｜ [English PDF](/assets/pdf/CV_Zheng_Haowen_EN.pdf)
+My core strength is **system-level engineering**: closing the loop from physical modeling through software/hardware implementation to quantitative evaluation. My research interests center on the robot **perception–estimation–control–safety** loop, with emphasis on multi-source sensor fusion, state estimation, motion control, and physical human–robot interaction. I am working toward **embodied perception–estimation–control** research through a concrete humanoid teleoperation project.
+
+**Representative work:** a **Unitree G1 upper-limb IMU teleoperation system** built as a full perception–estimation–control–safety loop — VQF fusion, analytical inverse kinematics, Isaac Lab Bayesian-optimized PD initialization, and configuration-aware joint limits; **3.83 mm stationary position RMS**, 448 simulation trials, two patent disclosures. An **ORB-SLAM3 end-effector pose evaluation system** serving as an independent vision-inertial reference for cross-method characterization. And a **vision-based precision-guided flight system** (national-level project, +42.3% hit accuracy).
+
+> 📄 Full CV: [English PDF](/assets/pdf/CV_Zheng_Haowen_EN.pdf) ｜ [中文 PDF](/assets/pdf/CV_Zheng_Haowen_CN.pdf)
 
 ---
 
 <details markdown="1">
-<summary><strong>🇬🇧 English profile (click to expand)</strong></summary>
+<summary><strong>🇨🇳 中文简介（点击展开）</strong></summary>
 
-**Haowen Zheng** — Junior undergraduate in **Robotics Engineering** at the National Excellent Engineer College, Chongqing University. Ranked 5th in the major (top 10%), GPA 3.697, CET-6 570.
+**郑皓文** — 重庆大学国家卓越工程师学院**机器人工程**专业大三本科生，专业排名第 5（前 10%），GPA 3.697，CET-6 570。
 
-I work across two main threads — **robot system integration** and **embedded system development** — and have led or deeply contributed to a number of end-to-end engineering projects spanning mathematical modeling, algorithm design, embedded firmware, PCB hardware design, and system-level integration & testing.
+围绕**机器人系统集成**与**嵌入式系统开发**两条主线，独立完成或深度参与多项端到端工程项目，覆盖数学建模、算法设计、嵌入式固件、PCB 硬件到系统集成测试的全链路。科研兴趣聚焦机器人「感知—估计—控制—安全」闭环，正通过宇树 G1 上肢遥操项目向具身感知—估计—控制方向深入。
 
-My core strength is **system-level engineering**: closing the full loop from physical modeling through software/hardware implementation to quantitative accuracy evaluation. My research interests center on the robot **perception–estimation–control** loop, with emphasis on multi-source sensor fusion, attitude estimation, motion control, and human–robot interaction.
-
-Representative work: a **Unitree G1 upper-limb IMU teleoperation system** engineered as a full perception–estimation–control–safety loop (VQF fusion + inverse kinematics + Isaac Lab Bayesian-optimized PD tuning + dynamic joint limits; 3.83 mm static accuracy; 2 patent disclosures), an **ORB-SLAM3 end-effector pose evaluation system**, and a **vision-based precision-guided flight system** (national-level project, +42.3% hit accuracy).
+代表作：宇树 G1 上肢 IMU 遥操系统（感知—估计—控制—安全完整闭环；静态位置 RMS 3.83 mm；2 项专利交底书）、ORB-SLAM3 末端位姿评估系统（独立视觉惯性参考）、视觉精确制导飞行系统（国家级大创，命中精度 +42.3%）。
 
 </details>
 
 ---
 
-### 🔧 技能栈 / Technical Skills
+### 🔧 Technical Skills
 
-- **编程语言**：Python · C/C++ · MATLAB · Verilog · JavaScript
-- **机器人 / 算法**：VQF 姿态融合 · ORB-SLAM3 · 逆运动学 · 卡尔曼滤波 · Modbus RTU · OpenGL/PyBullet
-- **嵌入式 / 硬件**：ESP32 / STM32 (ESP-IDF, HAL) · ICM-20948 / WT901 IMU · PCB 设计（立创 EDA）· 信号完整性
-- **工程 / 仿真**：SolidWorks · ANSYS · MuJoCo · Git · Linux · Docker
+- **Programming**: Python · C/C++ · MATLAB · Verilog · JavaScript
+- **Robotics & Algorithms**: VQF attitude fusion · ORB-SLAM3 · inverse kinematics · Kalman filter · Isaac Lab · Bayesian optimization · OpenGL/PyBullet
+- **Embedded & Hardware**: ESP32 / STM32 (ESP-IDF, HAL) · ICM-20948 / WT901 IMU · PCB design (EasyEDA) · signal integrity
+- **Engineering & Simulation**: SolidWorks · ANSYS · MuJoCo · Git · Linux · Docker
 
-### 🏆 代表性获奖 / Selected Awards
+### 🏆 Selected Awards
 
-- 🥇 国家级大学生创新训练计划《基于视觉的精确制导飞行系统研究》**结题优秀**（国家级，2025）
-- 🥇 全国大学生机器人大赛 **RoboMaster 2025** 全国赛三等奖（国家级，2025）
-- 🥈 RoboMaster 2025 中部赛区区域赛二等奖（省级，2025）
-- 🥇 全国大学生电子设计竞赛重庆大学校赛一等奖（校级，2025）
-- 🥉 中国大学生工程实践与创新能力大赛校赛铜奖（校级，2024）
+- 🥇 National Innovation Training Program *Vision-Based Precision-Guided Flight System* — **Excellent** conclusion (national, 2025)
+- 🥇 RoboMaster 2025 National Finals — 3rd prize (national, 2025)
+- 🥈 RoboMaster 2025 Central Regional — 2nd prize (provincial, 2025)
+- 🥇 NUEDC Chongqing University — 1st prize (university, 2025)
+- 🥉 China UEEC university bronze (university, 2024)
 
-完整项目作品见 [**Projects**](/projects/)，技术文档与笔记见 [**Blog**](/blog/)。
+Full portfolio at [**Research Portfolio**](/projects/), technical notes at [**Technical Notes**](/blog/).
