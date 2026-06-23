@@ -30,18 +30,20 @@ cv:
     Experience:
       - company: 宇树 G1 人形机器人上肢 IMU 遥操系统
         position: 项目核心开发者（国家级重大项目在申）
-        url: /projects/1-unitree-g1-teleop/
+        url: /projects/1_unitree_g1_teleop/
         start_date: 2025-12
         end_date: 至今
         summary: >
-          VQF 九轴姿态融合 + 混合解析-优化逆运动学，实时遥操宇树 G1 机器人上肢。约 5000 行代码，11 篇技术文档。
+          「感知—估计—控制—安全」完整闭环：VQF 九轴姿态融合 + 混合解析-优化逆运动学，实时遥操宇树 G1 上肢。约 5000 行代码，11 篇技术文档，2 项发明专利交底书。
         highlights:
-          - 静态精度 3.83 mm，手臂长度约束径向误差 0.40 mm。
+          - 静态精度 3.83 mm，手臂长度约束径向误差 0.40 mm；ORB-SLAM3 视觉惯性系统交叉验证。
+          - 在 Isaac Lab 中以贝叶斯优化（GP+EI，448 次仿真）整定 14 关节 PD 初值，量化 Sim-to-Real Gap。
+          - 实机硬件保护异常诊断（总误差标定 + 逐关节归因 + PyBullet 复现）→ 动态软件限位修复。
           - 设计 3 秒侧平举一次校准、6 坐标系统一管理、7 个单元测试覆盖全链路自洽性。
 
       - company: 视觉精确制导飞行系统（国家级大创）
         position: 项目主持人 / 结题优秀
-        url: /projects/3-vision-guidance/
+        url: /projects/3_vision_guidance/
         start_date: 2024
         end_date: 2026
         summary: >
@@ -52,7 +54,7 @@ cv:
 
       - company: SpeedyBot 低成本自主扫地机器人
         position: 组长 / 全栈开发
-        url: /projects/4-speedybot/
+        url: /projects/4_speedybot/
         start_date: 2025
         end_date: 2025
         summary: ESP32-S3 + ROS2 Humble + Cartographer + Nav2 全栈，含 PCB、固件、上位机、Web 界面，86 页技术报告。
@@ -83,7 +85,7 @@ cv:
       - name: 编程语言
         summary: Python, C/C++, MATLAB, Verilog, JavaScript
       - name: 机器人与算法
-        summary: VQF 姿态融合, ORB-SLAM3, 逆运动学, 卡尔曼滤波, Modbus RTU, OpenGL/PyBullet
+        summary: VQF 姿态融合, ORB-SLAM3, 逆运动学, 卡尔曼滤波, Isaac Lab, 贝叶斯优化, Modbus RTU, OpenGL/PyBullet
       - name: 嵌入式与硬件
         summary: ESP32/STM32 (ESP-IDF/HAL), ICM-20948/WT901 IMU, PCB 设计 (立创 EDA), 信号完整性
       - name: 工程与仿真

@@ -52,7 +52,7 @@ I work across two main threads — **robot system integration** and **embedded s
 
 My core strength is **system-level engineering**: closing the full loop from physical modeling through software/hardware implementation to quantitative accuracy evaluation. My research interests center on the robot **perception–estimation–control** loop, with emphasis on multi-source sensor fusion, attitude estimation, motion control, and human–robot interaction.
 
-Representative work: a **Unitree G1 upper-limb IMU teleoperation system** (VQF 9-axis fusion + inverse kinematics, 3.83 mm static accuracy), an **ORB-SLAM3 end-effector pose evaluation system**, and a **vision-based precision-guided flight system** (national-level project, +42.3% hit accuracy).
+Representative work: a **Unitree G1 upper-limb IMU teleoperation system** engineered as a full perception–estimation–control–safety loop (VQF fusion + inverse kinematics + Isaac Lab Bayesian-optimized PD tuning + dynamic joint limits; 3.83 mm static accuracy; 2 patent disclosures), an **ORB-SLAM3 end-effector pose evaluation system**, and a **vision-based precision-guided flight system** (national-level project, +42.3% hit accuracy).
 
 </details>
 

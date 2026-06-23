@@ -8,7 +8,7 @@ category: robotics
 related_publications: false
 ---
 
-将 Intel RealSense D435i 安装于操作者前臂，利用 ORB-SLAM3 的 IMU_STEREO 模式实时估计末端位姿，作为独立的外部真值参考，与项目一的双 IMU 正运动学方案进行**交叉精度对比**。独立完成全部搭建与评估。
+将 Intel RealSense D435i 安装于操作者前臂，利用 ORB-SLAM3 的 IMU_STEREO 模式实时估计末端位姿，作为独立的外部真值参考，与 [宇树 G1 上肢 IMU 遥操系统](/projects/1_unitree_g1_teleop/) 的双 IMU 正运动学方案进行**交叉精度对比**——用高精度视觉惯性参照，量化低成本纯 IMU 方案的误差边界。独立完成全部搭建与评估。
 
 - **传感器**：D435i 立体相机（双目 848×480 @ 30 fps）+ 板载 BMI055 IMU @ 200 Hz
 - **算法**：ORB-SLAM3 IMU_STEREO 模式，视觉惯性联合优化，实时输出 SE3 位姿

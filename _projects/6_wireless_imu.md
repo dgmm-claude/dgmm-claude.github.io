@@ -8,7 +8,7 @@ category: embedded
 related_publications: false
 ---
 
-基于 ESP32-C3 + ICM-20948 的无线九轴 IMU 姿态追踪节点，固件通过 WiFi 将 VQF 融合后的四元数实时传输至上位机，是项目一遥操系统的嵌入式子系统，独立完成。**完整硬件设计、固件与上位机已开源。**
+基于 ESP32-C3 + ICM-20948 的无线九轴 IMU 姿态追踪节点，固件通过 WiFi 将 VQF 融合后的四元数实时传输至上位机。它是 [宇树 G1 上肢 IMU 遥操系统](/projects/1_unitree_g1_teleop/) 的**感知层嵌入式子系统**，从该项目中独立出来单独开源，独立完成。**完整硬件设计、固件与上位机已开源。**
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
