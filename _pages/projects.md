@@ -1,11 +1,11 @@
 ---
 layout: page
-title: projects
+title: Research Portfolio
 permalink: /projects/
-description: 代表性工程项目 / Selected engineering projects
+description: 研究作品集 · Research Portfolio
 nav: true
 nav_order: 2
-display_categories: [robotics, embedded, research, software]
+display_categories: ["研究主线", "工程实践", "课程项目"]
 horizontal: false
 ---
 
