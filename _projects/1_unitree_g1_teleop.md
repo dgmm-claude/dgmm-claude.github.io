@@ -1,32 +1,32 @@
 ---
 layout: page
-title: 宇树 G1 上肢 IMU 遥操系统
-description: 面向宇树 G1 上肢的可穿戴多 IMU 遥操 · 校准 + 解析逆运动学 + 构型感知安全约束
+title: "Wearable IMU Teleoperation for Unitree G1"
+description: Calibrated multi-IMU motion mapping with analytical IK and configuration-aware safety constraints.
 img: assets/img/projects/04_g1_robot.png
 importance: 1
 category: 研究主线
 related_publications: false
 ---
 
-面向宇树 G1 人形机器人上肢的可穿戴 IMU 遥操，沿「感知—估计—控制—安全」闭环推进。
+A wearable-IMU teleoperation system for the Unitree G1 humanoid's upper limbs, developed as a full **perception–estimation–control–safety** loop.
 
-- **研究问题**：可穿戴 IMU 遥操受安装不确定性、长期漂移、关节耦合与自碰撞风险困扰。
-- **方法**：VQF 九轴融合 → 一次性侧平举校准 → 解析逆运动学 → Isaac Lab 贝叶斯优化整定 PD → 构型相关动态关节限位。
-- **证据**：静态 RMS **3.83 mm**、**448 次**仿真试验、**2 项**发明专利交底书。
+- **Problem:** IMU-driven upper-limb teleoperation suffers from sensor mounting uncertainty, long-term drift, joint coupling, and self-collision risk.
+- **Method:** VQF 9-axis fusion → calibration → analytical inverse kinematics → Isaac Lab Bayesian-optimized PD initialization → configuration-aware dynamic joint limits.
+- **Evidence:** 3.83 mm stationary position RMS, 448 simulation trials, two patent disclosures.
 
-**版本演进**
+**Version evolution**
 
-- **v1（2025.12–2026.03）**：双 IMU 驱动右臂 4 自由度。
-- **v2（2026.04–至今）**：五无线 IMU 驱动双臂 10 关节，含校准与安全约束。
+- **v1 (2025.12 – 2026.03):** Two-IMU right-arm teleoperation, 4 DoF; one-shot **3-second lateral-arm calibration**.
+- **v2 (2026.04 – present):** **Five wireless IMUs** driving both arms, 10 teleoperated DoF; **four-step calibration** (down / forward / lateral / roll-axis refinement).
 
-> 这是我的主线研究项目。其**感知层**采用自研的 [ESP32-C3 + ICM-20948 无线 IMU 节点](/projects/6_wireless_imu/)（已替代 WT901C485 成品模块，硬件/固件/上位机全开源），其**精度评估**与 [ORB-SLAM3 末端位姿评估系统](/projects/2_orbslam3_pose/) 互为交叉验证。
+> Main research project. Its **sensing layer** uses self-built [ESP32-C3 + ICM-20948 wireless IMU nodes](/projects/6_wireless_imu/) (replacing the WT901C485 off-the-shelf module; hardware/firmware/host open-sourced). Its accuracy is cross-characterized against the [ORB-SLAM3 end-effector evaluation system](/projects/2_orbslam3_pose/).
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/01_system_architecture.png" title="系统三层架构" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/01_system_architecture.png" title="Three-layer architecture" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-<div class="caption">传感器层 — 核心解算层 — 应用层的三层分层架构，数据从原始 IMU 到机器人关节角度经历 7 个处理阶段。</div>
+<div class="caption">Sensor → core-solving → application layers; raw IMU data passes through 7 stages before becoming joint angles.</div>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -35,50 +35,52 @@ related_publications: false
         </video>
     </div>
 </div>
-<div class="caption">G1 右臂实机遥操演示：操作者手臂姿态经 VQF 融合 + 逆运动学，实时映射为机器人关节角。</div>
+<div class="caption">Real-robot right-arm teleoperation demo: operator arm pose, after VQF fusion + IK, mapped to joint angles in real time.</div>
 
-## 关键技术
+## Key Techniques
 
-- **VQF 九轴姿态融合**：替代传统 Madgwick/Mahony 滤波，倾斜与航向通道分离估计、自适应加速度计修正、陀螺仪零偏在线补偿、磁场异常自适应拒绝。
-- **一次性侧平举校准**：3 秒同时完成航向校准、安装倾斜矫正、IK 解算标定三项补偿，数据持久化为 JSON。
-- **混合解析-优化逆运动学**：YXZ 分解解析解（毫秒级）+ L-BFGS-B 带边界约束优化 + 多起点搜索 + 限位内最优拟合，超限时误差改善 26%~50%。
-- **多坐标系统一管理**：6 个坐标系严格定义，基于旋转矩阵 Frobenius 内积回避四元数符号歧义，7 个单元测试覆盖全链路自洽性。
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/05_imu_circle_eval.png" title="画圆测试诊断" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">画圆测试四项诊断：拟合圆 R=30.8 mm，平面 RMS=8.83 mm。</div>
-
-## 精度评估（四类测试）
-
-| 测试项目 | 核心指标 | 结果 |
-|---------|---------|------|
-| 静态噪声 | σ_3D_RMS | **3.83 mm** |
-| 手臂长度约束 | σ_radial | **0.40 mm** |
-| 固定点重复性 | σ_RMS | 13.9 mm |
-| 圆弧轨迹一致性 | 相对误差 | 33.3% |
-
-该精度数据另由 [ORB-SLAM3 视觉惯性系统](/projects/2_orbslam3_pose/) 作为独立视觉惯性参考交叉验证，以量化纯 IMU 方案的误差边界。
-
-## 控制参数整定：Isaac Lab 贝叶斯优化
-
-实机遥操中，`shoulder_yaw` 关节动态跟踪误差明显偏大。我没有手工试凑 PD 参数，而是在 **NVIDIA Isaac Lab** 中搭建了一套**可复现的参数搜索流程**，用贝叶斯优化自动寻找 14 个上肢关节的 Kp/Kd 初值：
-
-- **仿真环境**：Isaac Sim 5.1 + PhysX 隐式驱动，G1 29-DoF URDF 固定基座，腿/腰锁定，逐关节施加**阶跃 + 多频正弦扫频（0.2–2.0 Hz）**测试轨迹；
-- **优化算法**：自研贝叶斯优化（高斯过程 + 期望改进 GP+EI），纯 numpy+scipy 实现，**28 维搜索空间**（14 关节 × {Kp, Kd}）；
-- **规模**：每关节每轨迹 16 次迭代（5 随机 + 11 贝叶斯），**共 448 次仿真试验**，RTX 3060 约 30 分钟跑完。
+- **VQF 9-axis fusion:** replaces Madgwick/Mahony; decoupled inclination/heading estimation, adaptive accelerometer correction, online gyroscope-bias compensation, magnetic-disturbance rejection.
+- **Calibration:** v1 completes heading, mounting-tilt and IK calibration in a single 3-second lateral-arm pose; v2 adds a roll-axis refinement step (down / forward / lateral / roll). Persisted as JSON.
+- **Hybrid analytical-optimization IK:** YXZ-decomposed analytical solution (millisecond-level) + L-BFGS-B bounded optimization + multi-start search; 26–50% error reduction when exceeding limits.
+- **Unified coordinate management:** 6 frames strictly defined; rotation-matrix Frobenius inner product avoids quaternion sign ambiguity; 7 unit tests cover full-chain consistency.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/58_bo_convergence.png" title="贝叶斯优化收敛曲线" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/59_pd_before_after.png" title="默认 vs 优化 PD 参数" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/projects/05_imu_circle_eval.png" title="Circle-drawing diagnosis" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-<div class="caption">左：各关节 best-so-far 代价收敛曲线；右：右臂关键关节默认 PD 与优化 PD 的棒棒糖对比。</div>
+<div class="caption">Circle-drawing diagnosis: fitted radius R = 30.8 mm, in-plane RMS = 8.83 mm.</div>
+
+## Accuracy (four tests)
+
+| Test | Metric | Result |
+|------|--------|--------|
+| Stationary noise | σ_3D_RMS | **3.83 mm** |
+| Arm-length constraint | σ_radial | **0.40 mm** |
+| Fixed-point repeatability | σ_RMS | 13.9 mm |
+| Circle-trajectory consistency | relative error | 33.3% |
+
+These are **stationary / short-horizon RMS figures** of the IMU-only kinematic chain (not absolute positioning against a metric ground truth). They are independently cross-characterized by the [ORB-SLAM3 vision-inertial system](/projects/2_orbslam3_pose/) to bound the error of the low-cost IMU-only approach.
+
+## Control: Isaac Lab Bayesian Optimization
+
+`shoulder_yaw` showed large dynamic tracking error. Rather than hand-tune PD gains, I built a reproducible parameter-search pipeline in **NVIDIA Isaac Lab**, using Bayesian optimization to initialize Kp/Kd for the 14 upper-limb joints.
+
+- **Simulation:** Isaac Sim 5.1 + PhysX implicit; G1 29-DoF URDF, fixed base, legs/torso locked; per-joint step + multi-frequency sine sweep (0.2–2.0 Hz).
+- **Algorithm:** custom BO (Gaussian Process + Expected Improvement), pure numpy+scipy; **28-D** search space (14 joints × {Kp, Kd}).
+- **Scale:** 16 iterations per joint per trajectory (5 random + 11 Bayesian); **448 trials**, ~30 min on RTX 3060.
+
+> **Why 14 tuned joints vs 10 teleoperated?** IK drives 5 DoF per arm (SP/SR/SY/EL/WR = 10 total). PD tuning additionally stabilizes wrist pitch / yaw (4 more), totaling 14 actuated upper-limb joints — the extra joints are controlled even when not driven by IK.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/58_bo_convergence.png" title="BO convergence" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/59_pd_before_after.png" title="Default vs optimized PD" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">Left: best-so-far cost convergence per joint; right: default vs optimized PD for key right-arm joints.</div>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -87,44 +89,45 @@ related_publications: false
         </video>
     </div>
 </div>
-<div class="caption">PyBullet 仿真环境中的右臂轨迹跟踪：贝叶斯优化得到的 PD 参数在此评估。</div>
+<div class="caption">Right-arm trajectory tracking in PyBullet: the Bayesian-optimized PD gains are evaluated here.</div>
 
-**Sim-to-Real 结论**（诚实的说，sim2real gap依旧较大）：
+**Honest sim-to-real findings:**
 
-1. **仿真内有效**：肩 pitch / 肘 / 腕关节仿真跟踪 RMSE 普遍降到 0.3°–0.7°；但 **shoulder_yaw 仍是瓶颈（1.5°–3.2°）**——它承受最大重力力矩且存在关节耦合。
-2. **Sim-to-Real Gap 显著**：实机 RMSE 是仿真的 **5–10 倍**。
-3. **速度前馈实机失效**：v3 优化加入的速度前馈项在实机上引发严重振荡，被弃用。
-4. **最终参数来源**：最终上机电机的 PD 参数，是在仿真初值基础上经 **4 轮实机调试**确定——仿真负责**缩小搜索空间**，实机日志决定**最终取值**。
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/61_sim_to_real_gap.png" title="仿真 vs 实机 RMSE" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">各关节仿真 RMSE 与实机 RMSE 对比斜率图：可见两者量级差异与哪些关节迁移有效。</div>
-
-## 运行安全：从"硬件保护"异常到动态限位
-
-实机长时间遥操中，G1 右臂会偶发**硬件保护**——电机进入阻尼态、滑落回零、数秒后自恢复。我将其作为一个独立的工程诊断问题系统化解决：
-
-- **异常识别**：用右臂总电机误差的峰值（峰值×0.3 为阈值、持续 >5 s）从遥操日志中自动标定异常时段；两段典型异常分别持续 **7.2 s / 8.2 s**，峰值误差 **2.01 rad / 1.56 rad**。
-- **归因分析**：逐关节误差贡献分解，**肘部电机是主导贡献者（40%–61%）**，符合直觉。
-- **根因定位**：结合 PyBullet 异常时段运动复现 + 机器人胸口刮痕物证，确认是**夹肘姿态下大臂已撞机械限位、但尚未触及软件限位**（软件限位取的是各姿态可达范围的并集），操作员继续夹肘即触发硬件保护。
-- **修复方案**：设计**依赖其他关节角的动态软件限位函数**，对大臂 yaw 等操作者不易感知碰撞的危险关节按姿态动态收紧限位。
+1. **Effective in simulation:** pitch / elbow / wrist RMSE drops to 0.3–0.7°; **shoulder_yaw remains the bottleneck (1.5–3.2°)** — highest gravitational torque + joint coupling.
+2. **Significant sim-to-real gap:** real-robot RMSE is **5–10×** simulation.
+3. **Velocity feedforward failed on real robot:** the v3 feedforward term caused severe oscillation and was dropped.
+4. **Final parameters:** simulation initial values refined over **4 rounds of real-robot tuning** — simulation narrows the search space; real logs decide the final values.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/60_anomaly_detection.png" title="异常时段检测" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/projects/61_sim_to_real_gap.png" title="Sim vs real RMSE" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-<div class="caption">从总误差曲线自动标定的异常时段（红区），肘部电机贡献主导，与 PyBullet 复现的夹肘撞击吻合。</div>
+<div class="caption">Per-joint simulation RMSE vs real-robot RMSE: the order-of-magnitude gap and which joints transfer well.</div>
 
-> 详见技术笔记：[实机遥操中的"硬件保护"异常诊断](/blog/2026/unitree-g1-hardware-protection-anomaly/)、[人形机器人自碰撞避免论文阅读](/blog/2026/humanoid-self-collision-avoidance/)。
+> See notes: [Hardware-protection anomaly diagnosis](/blog/2026/unitree-g1-hardware-protection-anomaly/), [Humanoid self-collision avoidance](/blog/2026/humanoid-self-collision-avoidance/).
 
-## 成果产出
+## Runtime safety: from hardware-protection anomaly to dynamic limits
 
-- **发明专利交底书 ×2**（已提交）：
-  - 《基于多节点无线 IMU 的机器人上肢遥操作解算方法及系统》——感知与解算主线；
-  - 《基于多 IMU 遥操作的人形机器人上肢关节目标安全生成与动态限位控制方法及系统》——运行安全主线。
+During long sessions the right arm occasionally entered **hardware protection** — motors turn damped, drop to zero, auto-recover after seconds. I treated it as a standalone diagnosis problem:
 
-> 技术栈：Python · VQF · Isaac Lab / PyBullet · 贝叶斯优化(GP+EI) · OpenGL · WiFi/UDP ｜ 硬件：宇树 G1 + 2× 自研 [ESP32-C3 + ICM-20948 无线 IMU 节点](/projects/6_wireless_imu/)（已替代 WT901C485 成品模块）
+- **Detection:** auto-segment anomaly windows from total motor-error peaks (peak × 0.3 threshold, > 5 s); two typical events lasted **7.2 s / 8.2 s**, peak error **2.01 / 1.56 rad**.
+- **Attribution:** per-joint error decomposition — **elbow dominates (40–61%)**.
+- **Root cause:** PyBullet replay + chest-scratch physical evidence confirm the upper arm hits the **mechanical limit before the software limit** (the software limit was the union of all reachable ranges — too loose).
+- **Fix:** a **configuration-dependent dynamic software-limit function** that tightens limits on dangerous joints (e.g. upper-arm yaw) as a function of the other joint angles.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/60_anomaly_detection.png" title="Anomaly detection" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">Auto-segmented anomaly windows; elbow dominates, matching the PyBullet-replayed elbow-clamp collision.</div>
+
+## Outputs
+
+- **Two invention patent disclosures** (prepared):
+  - *Multi-node wireless-IMU upper-limb teleoperation solving method and system* — sensing & solving.
+  - *Safe joint-target generation and dynamic limit control for humanoid upper limbs under multi-IMU teleoperation* — runtime safety.
+- **Term defense report** with PyBullet replay + real-robot demo video; revised through two Codex review rounds.
+
+> Tech stack: Python · VQF · Isaac Lab / PyBullet · Bayesian optimization (GP+EI) · OpenGL · WiFi/UDP ｜ Hardware: Unitree G1 + **5× self-built [ESP32-C3 + ICM-20948 wireless IMU nodes](/projects/6_wireless_imu/)** (v2; v1 used 2×)
