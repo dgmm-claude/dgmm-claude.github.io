@@ -65,7 +65,7 @@ _GPA 3.697 · Rank 5 (Top 10%) · CET-6 570_
 
 <div align="center">
 
-📫 **联系我**：[![Email](https://img.shields.io/badge/Email-联系-blue?logo=gmail&logoColor=white)](mailto:your-email@cqu.edu.cn)
+📫 **联系我**：[![Email](https://img.shields.io/badge/Email-联系-blue?logo=gmail&logoColor=white)](mailto:20231076@stu.cqu.edu.cn)
 · 🌐 [Website](https://dgmm-claude.github.io)
 · 💼 [GitHub](https://github.com/dgmm-claude)
 
