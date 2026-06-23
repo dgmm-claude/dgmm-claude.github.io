@@ -19,6 +19,15 @@ related_publications: false
 </div>
 <div class="caption">传感器层 — 核心解算层 — 应用层的三层分层架构，数据从原始 IMU 到机器人关节角度经历 7 个处理阶段。</div>
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <video controls muted playsinline preload="metadata" class="img-fluid rounded z-depth-1" style="width:100%;">
+            <source src="/assets/video/unitree_teleop_demo.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+<div class="caption">G1 右臂实机遥操演示：操作者手臂姿态经 VQF 融合 + 逆运动学，实时映射为机器人关节角。</div>
+
 ## 关键技术
 
 - **VQF 九轴姿态融合**：替代传统 Madgwick/Mahony 滤波，倾斜与航向通道分离估计、自适应加速度计修正、陀螺仪零偏在线补偿、磁场异常自适应拒绝。
@@ -61,6 +70,15 @@ related_publications: false
     </div>
 </div>
 <div class="caption">左：各关节 best-so-far 代价收敛曲线；右：右臂关键关节默认 PD 与优化 PD 的棒棒糖对比。</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <video controls muted playsinline preload="metadata" class="img-fluid rounded z-depth-1" style="width:100%;">
+            <source src="/assets/video/unitree_pybullet_sim.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+<div class="caption">PyBullet 仿真环境中的右臂轨迹跟踪：贝叶斯优化得到的 PD 参数在此评估。</div>
 
 **Sim-to-Real 结论**（诚实的说，sim2real gap依旧较大）：
 

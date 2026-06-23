@@ -66,6 +66,20 @@ _styles: ".post-content img, #markdown-content img { max-width: 100%; height: au
 
 为验证异常识别正确，我在 PyBullet 中把异常发生前后 ±5 秒的右臂运动完整复现出来，可以清楚看到异常的全过程。
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <video controls muted playsinline preload="metadata" class="img-fluid rounded z-depth-1" style="width:100%;">
+            <source src="/assets/video/unitree_anomaly_replay_1.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <video controls muted playsinline preload="metadata" class="img-fluid rounded z-depth-1" style="width:100%;">
+            <source src="/assets/video/unitree_anomaly_replay_2.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+<div class="caption">左：异常段 A（115725）PyBullet 复现；右：异常段 B（150653）复现——均可见夹肘时大臂撞向胸口的过程。</div>
+
 逐帧查看复现视频，发现两次异常发生时**机器人都呈现"夹肘"姿态（大臂撞到胸口）**；再用机器人自身的损伤痕迹交叉印证——胸口出现明显刮伤，正是大臂电机所伤。
 
 由此初步确定进入保护的因果链：
