@@ -1,14 +1,14 @@
 ---
 layout: page
 title: ORB-SLAM3 末端位姿评估系统
-description: 与遥操系统配套的交叉验证真值系统 · RealSense D435i + ORB-SLAM3 · 静态 0.37 mm
+description: 与遥操系统配套的独立视觉惯性参考系统 · RealSense D435i + ORB-SLAM3 · 静态 0.37 mm
 img: assets/img/projects/08_slam_trajectory.png
 importance: 2
-category: robotics
+category: 研究主线
 related_publications: false
 ---
 
-将 Intel RealSense D435i 安装于操作者前臂，利用 ORB-SLAM3 的 **IMU_STEREO** 模式实时估计末端位姿，作为独立的外部真值参考，与 [宇树 G1 上肢 IMU 遥操系统](/projects/1_unitree_g1_teleop/) 的双 IMU 正运动学方案进行**交叉精度对比**——用高精度视觉惯性参照，量化低成本纯 IMU 方案的误差边界。独立完成 ORB-SLAM3 编译标定、评估工具开发与五类量化评估。
+将 Intel RealSense D435i 安装于操作者前臂，利用 ORB-SLAM3 的 **IMU_STEREO** 模式实时估计末端位姿，作为独立的视觉惯性参考系统，与 [宇树 G1 上肢 IMU 遥操系统](/projects/1_unitree_g1_teleop/) 的双 IMU 正运动学方案进行**交叉精度对比**——用高精度视觉惯性参照，量化低成本纯 IMU 方案的误差边界。独立完成 ORB-SLAM3 编译标定、评估工具开发与五类量化评估。
 
 - **传感器**：D435i 立体相机（双目 848×480 @ 30 fps）+ 板载 BMI055 IMU @ 200 Hz
 - **算法**：ORB-SLAM3 IMU_STEREO 模式，视觉惯性联合优化，实时输出 SE3 位姿
@@ -39,7 +39,7 @@ related_publications: false
 
 ### 与双 IMU 正运动学方案的交叉对比（核心产出）
 
-本项目最大的价值不是单方面精度，而是作为**独立真值**与低成本的纯 IMU 方案逐项对比，从而划清两种技术路线的适用边界：
+本项目最大的价值不是单方面精度，而是作为**独立参考系统**与低成本的纯 IMU 方案逐项对比，从而划清两种技术路线的适用边界：
 
 | 指标 | ORB-SLAM3 | 双 IMU 正运动学 | 胜出 |
 |------|-----------|----------------|------|

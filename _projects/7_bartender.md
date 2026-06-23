@@ -4,7 +4,7 @@ title: 智能调酒机系统（二代 & 三代）
 description: 团队项目 · 负责全部软件系统 + PCB 硬件设计 · 二代连续运行 3 个月零故障
 img: assets/img/projects/14_bartender_gen3_photo.jpg
 importance: 7
-category: embedded
+category: 工程实践
 related_publications: false
 ---
 

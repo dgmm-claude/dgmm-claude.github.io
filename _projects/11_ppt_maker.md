@@ -3,7 +3,7 @@ layout: page
 title: AI PPT Maker
 description: 全栈 AI 应用 · Flask 后端 + React 前端 · MiniMax 大模型驱动
 importance: 11
-category: software
+category: 课程项目
 related_publications: false
 ---
 

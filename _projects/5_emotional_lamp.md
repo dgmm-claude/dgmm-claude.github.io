@@ -4,7 +4,7 @@ title: 创意情感交互台灯控制系统
 description: 自动控制原理课程综合项目 · Buck 闭环控制 + Apple Elegant 多模态情感交互
 img: assets/img/projects/12_lamp_hardware.png
 importance: 5
-category: robotics
+category: 课程项目
 related_publications: false
 ---
 

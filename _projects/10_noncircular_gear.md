@@ -4,7 +4,7 @@ title: 非圆齿轮手摇发电机效率优化
 description: 工程制造课程项目 · 实测数据驱动 · 非圆齿轮变传动比使效率波动缩小 73%
 img: assets/img/projects/65_gear_design.png
 importance: 10
-category: research
+category: 课程项目
 related_publications: false
 ---
 

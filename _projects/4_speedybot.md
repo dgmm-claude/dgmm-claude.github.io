@@ -4,7 +4,7 @@ title: SpeedyBot 低成本自主扫地机器人
 description: 微电路系统设计课程大作业（组长）· ESP32-S3 + ROS2 全栈，86 页技术报告
 img: assets/img/projects/22_speedybot_prototype.jpeg
 importance: 4
-category: robotics
+category: 工程实践
 related_publications: false
 ---
 

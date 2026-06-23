@@ -4,7 +4,7 @@ title: 视觉精确制导飞行系统
 description: 第十九届国家级大学生创新训练项目（主持）· 结题优秀 · 双级制导使命中精度提升 42.3%
 img: assets/img/projects/40_guidance_vision_pcb.png
 importance: 3
-category: robotics
+category: 研究主线
 related_publications: false
 ---
 

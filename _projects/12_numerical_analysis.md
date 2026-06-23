@@ -4,7 +4,7 @@ title: 工程数值分析：方程求根与结构模态
 description: 工程数值分析课程 · 非线性求根（二分/牛顿/遗传/粒子群）+ 多自由度模态与地震响应（SOR/反幂法/RK4）
 img: assets/img/projects/62_numerical_convergence.png
 importance: 12
-category: research
+category: 课程项目
 related_publications: false
 ---
 
