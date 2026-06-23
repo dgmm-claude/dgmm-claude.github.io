@@ -36,6 +36,7 @@ cv:
         summary: >
           「感知—估计—控制—安全」完整闭环：VQF 九轴姿态融合 + 混合解析-优化逆运动学，实时遥操宇树 G1 上肢。约 5000 行代码，11 篇技术文档，2 项发明专利交底书。
         highlights:
+          - 感知层全换自研 ESP32-C3 + ICM-20948 无线节点（替代 WT901C485 成品，WiFi/UDP + 本地 VQF，已开源）。
           - 静态精度 3.83 mm，手臂长度约束径向误差 0.40 mm；ORB-SLAM3 视觉惯性系统交叉验证。
           - 在 Isaac Lab 中以贝叶斯优化（GP+EI，448 次仿真）整定 14 关节 PD 初值，量化 Sim-to-Real Gap。
           - 实机硬件保护异常诊断（总误差标定 + 逐关节归因 + PyBullet 复现）→ 动态软件限位修复。
@@ -65,7 +66,7 @@ cv:
         start_date: 2025
         end_date: 2026
         summary: >
-          独立完成无线九轴 IMU 节点（ESP32-C3 + ICM-20948 + VQF，WiFi/UDP，OTA，开源）与 FC2203S 电机半桥驱动开源硬件（GPL-3.0）。
+          独立完成无线九轴 IMU 节点（ESP32-C3 + ICM-20948 + VQF，WiFi/UDP，OTA，开源），已用于宇树 G1 遥操系统替代 WT901C485 成品模块；另含 FC2203S 电机半桥驱动开源硬件（GPL-3.0）。
         highlights:
           - 完整硬件、固件、上位机已开源。
 
