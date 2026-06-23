@@ -1,5 +1,6 @@
 ---
 layout: post
+featured: true
 title: "实机遥操中的「硬件保护」异常诊断"
 date: 2026-06-10 21:00:00 +0800
 description: 宇树 G1 右臂偶发硬件保护——从总电机误差曲线自动标定异常、逐关节归因、PyBullet 复现定位根因，到动态限位修复。

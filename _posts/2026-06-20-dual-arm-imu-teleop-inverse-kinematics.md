@@ -1,5 +1,6 @@
 ---
 layout: post
+featured: true
 title: "双臂 IMU 遥操的逆运动学：从 4 步校准到 5 电机解析解"
 date: 2026-06-20 21:00:00 +0800
 description: 5 个无线 IMU 驱动宇树 G1 双臂——Procrustes 校准对齐坐标系、增量跟踪消除 IMU 漂移、分离旋转轴的解析 IK 解出 5 个关节角。
