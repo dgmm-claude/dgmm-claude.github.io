@@ -8,7 +8,7 @@ subtitle: <a href="https://eie.cqu.edu.cn/">National Excellent Engineer College,
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_haowen.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Robotics Engineering · Junior</p>
