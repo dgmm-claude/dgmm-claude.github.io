@@ -8,6 +8,8 @@ category: Selected Engineering
 related_publications: false
 ---
 
+> **English summary:** A team smart-bartender robot; I owned all software and the PCB hardware. Two iterations (Generation 2 and 3) across ten functional modules and 2000+ lines of core code: recipe management, precise dosing (pump + flow meter), stirring, refrigeration/lighting, an LVGL touch UI, WiFi remote ordering, OTA updates, and fault self-checks, all scheduled by FreeRTOS. The Generation 2 prototype ran continuously for over three months with zero failures, validating the firmware architecture and hardware reliability — the main lesson being how to iterate a multi-actuator embedded product from first prototype to a robust long-running system.
+
 团队项目，本人负责**全部软件系统 + PCB 硬件设计**。经历二代、三代两轮迭代，10 个功能模块，约 2000+ 行核心代码。二代样机连续运行超 **3 个月零故障**。
 
 <div class="row">

@@ -8,6 +8,8 @@ category: Coursework
 related_publications: false
 ---
 
+> **English summary:** An Automatic Control course project (independent) in two parts. The base part covers synchronous Buck converter modeling and closed-loop control — PSIM simulation, STM32 digital PID with voltage/current dual loops, and Bode-plot frequency-domain stability analysis. The comprehensive part is an affective desk lamp: a Raspberry Pi CM5 with MediaPipe (gesture/expression) and iFlytek ASR perceives the user, an STM32F103 drives a 3-DoF mechanism via inverse kinematics to orient the head, and an affective-state model maps multi-modal input to expressive posture and lighting. Combines power-electronics control with embodied affective interaction.
+
 自动控制原理课程综合项目（独立完成），含**基础项目**与**综合项目**两部分。
 
 ### 基础项目：同步 Buck 降压变换器闭环控制

@@ -8,6 +8,8 @@ category: Selected Engineering
 related_publications: false
 ---
 
+> **English summary:** A low-cost autonomous sweeping robot built as a microelectronics course capstone (team lead, 3 members), spanning the full stack — custom PCB (motor drive, sensor interface, power management), ESP32-S3 firmware (FreeRTOS, PlatformIO), and a ROS2 Humble host running Cartographer SLAM with Nav2 planning and obstacle avoidance, plus a self-developed web UI for remote mapping, targeted cleaning, and status monitoring. End-to-end control latency was measured. Output: an 86-page technical report.
+
 3 人小组组长，主导完成一款低成本自主导航扫地机器人，覆盖 PCB 设计、嵌入式固件、ROS2 上位机、Web 控制界面全栈，产出 **86 页技术报告**。
 
 <div class="row">

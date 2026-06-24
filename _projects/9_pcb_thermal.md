@@ -8,6 +8,8 @@ category: Selected Engineering
 related_publications: false
 ---
 
+> **English summary:** A mathematical-physics methods course project (independent) on how thermal vias affect a PCB pad's heating rate. A PDE heat-conduction model of the copper/FR4/via structure is solved by a self-developed 50k-node 3D finite-element code, cross-validated against ANSYS Fluent/Mechanical and against physical measurements from an STM32F103 + MAX31865 + Pt100 rig (nine datasets). A via cuts the pad time constant from 45.3 s to 8.2 s (5.5×); the two-exponential model fits with R² > 0.9999 and a design-formula MAPE < 0.2%; the custom FEM matches ANSYS within 2%; measurement uncertainty ±0.27 °C. Output: a seven-chapter, 3229-line technical document.
+
 数学物理方法课程综合项目（独立完成）。围绕**热孔（thermal via）对 PCB 焊盘升温速率的影响**展开，建立偏微分方程模型，自研有限元求解，并与 ANSYS 商业软件、实物实验三方交叉验证，产出 **7 章 3229 行**技术文档与 9 组实验数据。
 
 ### 核心结论

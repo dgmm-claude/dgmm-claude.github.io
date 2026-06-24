@@ -8,6 +8,8 @@ category: Coursework
 related_publications: false
 ---
 
+> **English summary:** A numerical-analysis course project with two assignments on one physical system. (1) Nonlinear root-finding — comparing bisection, Newton, and meta-heuristics (GA, PSO) for convergence and global search. (2) A full static-modes-seismic pipeline on a five-story shear-type building: linear systems by SOR (optimal ω≈1.65 cuts iterations from 552 to 105), the fundamental frequency by inverse power iteration in 8 steps (1.334 Hz), the first mode carrying 84.7% effective mass, and seismic response by RK4 with 0.13 mm displacement error. Links SOR convergence, eigenvalue methods, and RK4 integration on one model.
+
 工程数值分析课程的两个大作业，覆盖**非线性方程求根**与**结构动力学模态分析 + 地震响应**两条主线，综合运用迭代法、特征值方法与 ODE 数值积分，对同一物理系统做多层数值研究。
 
 ### 大作业一：非线性方程求根

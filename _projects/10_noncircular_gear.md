@@ -8,6 +8,8 @@ category: Coursework
 related_publications: false
 ---
 
+> **English summary:** A manufacturing-engineering course project optimizing a hand-crank generator with a non-circular gear whose transmission ratio varies continuously with crank angle, locking the operating point in the high-efficiency region instead of sweeping across high and low efficiency each revolution. Driven by measured torque-speed data from an 83KV motor (100 ms synchronous sampling), the instantaneous optimal ratio is inverted from CSV logs, the pitch curve is designed to mesh with a circular gear, and a parameterized DXF (ezdxf + shapely) is 3D-printed for validation. The efficiency spread narrows by about 73% and the minimum efficiency rises from 85.67% to 92.86% — raising the floor, not the peak.
+
 工程制造课程项目。手摇发电机的痛点是：固定传动比下发电机工作点随曲柄角度漂移，无法始终停在高效区。本项目引入**非圆齿轮变传动比**，让传动比随角度连续变化，主动把工作点"锁"在高效区。基于实测扭矩-转速数据优化节曲线，自动生成可 3D 打印的 DXF，并完成样件上机验证。
 
 ### 核心成果（实测驱动）
