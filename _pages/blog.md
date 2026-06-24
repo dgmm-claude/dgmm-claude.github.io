@@ -5,7 +5,7 @@ title: Technical Notes
 nav: true
 nav_order: 3
 pagination:
-  enabled: true
+  enabled: false
   collection: posts
   permalink: /page/:num/
   per_page: 5
@@ -105,11 +105,7 @@ pagination:
 
   <ul class="post-list">
 
-    {% if page.pagination.enabled %}
-      {% assign postlist = paginator.posts %}
-    {% else %}
-      {% assign postlist = site.posts %}
-    {% endif %}
+    {% assign postlist = site.posts | where: "category", "research" %}
 
     {% for post in postlist %}
     {% if post.featured %}{% continue %}{% endif %}
@@ -192,8 +188,6 @@ pagination:
 
   </ul>
 
-{% if page.pagination.enabled %}
-{% include pagination.liquid %}
-{% endif %}
+<p style="margin-top:1.5rem;">Older engineering &amp; coursework notes (non-circular gears, MOSFET debugging, modal analysis) are in the <a href="/engineering/">Engineering Archive</a>.</p>
 
 </div>

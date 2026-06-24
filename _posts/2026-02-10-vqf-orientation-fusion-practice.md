@@ -1,5 +1,6 @@
 ---
 layout: post
+category: research
 featured: true
 title: "VQF 9-Axis Attitude Fusion in Practice"
 date: 2026-02-10 21:00:00 +0800

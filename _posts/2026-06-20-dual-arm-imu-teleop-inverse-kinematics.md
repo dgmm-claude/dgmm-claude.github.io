@@ -1,9 +1,10 @@
 ---
 layout: post
+category: research
 featured: true
 title: "Inverse Kinematics for Dual-Arm IMU Teleoperation: 4-Step Calibration to Analytical 5-DoF Solutions"
 date: 2026-06-20 21:00:00 +0800
-description: "The core algorithm of the G1 dual-arm system: turning five wireless-IMU quaternions into 10 robot joint angles in real time. A three-stage pipeline — offline 4-step calibration (Procrustes alignment with SVD plus roll-axis refinement), online incremental tracking that cancels absolute IMU drift, and an analytical IK that decouples rotation axes (Y-component gives shoulder roll, XZ gives pitch; Z gives elbow, XY gives yaw; palm gives wrist roll), each step with dual-solution selection and limit clamping. Smoothed by a 3.5 rad/s rate limit and sent over UDP at 50 Hz."
+description: "The core algorithm of the G1 dual-arm system: turning five wireless-IMU quaternions into 10 robot joint angles in real time. A three-stage pipeline — offline 4-step calibration (Procrustes alignment with SVD plus roll-axis refinement), online incremental tracking that reduces sensitivity to absolute-heading drift, and an analytical IK that decouples rotation axes (Y-component gives shoulder roll, XZ gives pitch; Z gives elbow, XY gives yaw; palm gives wrist roll), each step with dual-solution selection and limit clamping. Smoothed by a 3.5 rad/s rate limit and sent over UDP at 50 Hz."
 tags: 机器人 逆运动学 IMU 宇树G1 遥操 Procrustes
 categories: 技术详解
 ---
@@ -41,14 +42,14 @@ $$M = V_{\text{真值}}\,U_{\text{观测}}^{\mathsf{T}},\quad M = W\Sigma V^{\ma
 
 **步骤 4（Roll）** 精修：绕手臂长轴旋转时，帧间四元数变化的旋转轴就是骨骼方向，加权平均后混入 Procrustes 约束——3 个方向约束不够，Roll 数据补上第 4 个。
 
-## 阶段二：增量跟踪，消除 IMU 绝对漂移
+## 阶段二：增量相对跟踪，降低漂移敏感性
 
-无线 IMU 的绝对方向有缓慢漂移，直接用 $q_{\text{rel}}=\mathrm{conj}(q_{\text{chest}})\otimes q_{\text{link}}$ 会累积漂移。解法是**增量式累积**：
+两枚 IMU 各自的绝对朝向都有缓慢漂移，直接用 $q_{\text{rel}}=\mathrm{conj}(q_{\text{chest}})\otimes q_{\text{link}}$ 会把绝对航向偏置与共同参考系漂移带进相对姿态。**增量式累积**降低了对这类误差的敏感性：
 
 - 每帧只算微小增量 $dq_c=\mathrm{conj}(q_{\text{chest,prev}})\otimes q_{\text{chest}}$，$dq_l$ 同理
 - 累积更新 $q_{\text{rel}}^{inc} \leftarrow \mathrm{conj}(dq_c)\,q_{\text{rel}}^{inc}\,dq_l$
 
-短时增量里漂移影响极小。帧间变化超阈值（0.5 rad）则回退绝对值（防 IMU 重连异常）。
+需要说明：增量跟踪降低的是对**绝对航向偏置与短时共同漂移**的敏感性，**并不消除两枚 IMU 之间独立的相对漂移**——残余相对漂移由 VQF 在线校正与帧间连续性约束进一步抑制。帧间变化超阈值（0.5 rad）则回退绝对值（防 IMU 重连异常）。
 
 方向重建：$\mathbf{d}_{\text{chest}} = R_{\text{align}}\,\mathrm{quat\_rotate}(q_{\text{rel}}^{inc},\,\mathbf{arm\_body\_dir})$。
 

@@ -1,5 +1,6 @@
 ---
 layout: post
+category: research
 featured: true
 title: "Why Forearm Pose + Shoulder Distance Cannot Uniquely Locate a Point"
 date: 2026-01-22 21:00:00 +0800

@@ -1,5 +1,6 @@
 ---
 layout: post
+category: engineering
 title: "Forward Derivation of Non-Circular-Gear Manufacturing (Three Pipelines)"
 date: 2026-04-25 10:00:00 +0800
 description: "The manufacturing-side companion to the non-circular-gear efficiency project: how a variable-ratio pitch curve is actually produced. Covers machining options for non-circular pitch curves (CNC hobbing, shaping, 3D printing), the geometric constraints ensuring correct meshing with the mating circular gear (module, pressure angle, pitch matching), and the practical tolerances and post-processing, with references to relevant Chinese patents on non-circular-gear shaping methods."

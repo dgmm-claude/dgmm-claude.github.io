@@ -1,5 +1,6 @@
 ---
 layout: post
+category: engineering
 title: "Efficiency Optimization of a Hand-Crank Generator with Non-Circular Gears"
 date: 2026-04-10 10:00:00 +0800
 description: "A course project showing how a non-circular gear — whose transmission ratio varies continuously with crank angle — locks the generator operating point into its high-efficiency region instead of sweeping across high and low efficiency each revolution. Driven by measured torque-speed data, the instantaneous optimal ratio is inverted from CSV logs, the pitch curve is designed to mesh with a circular gear, and a parameterized DXF is generated (ezdxf + shapely) for 3D printing. Results: efficiency spread narrowed about 73%, minimum efficiency raised from 85.67% to 92.86%."

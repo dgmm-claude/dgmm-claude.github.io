@@ -1,5 +1,6 @@
 ---
 layout: post
+category: engineering
 title: "Modal Analysis and Seismic Response of a Multi-DOF Structure"
 date: 2026-05-20 10:00:00 +0800
 description: "A numerical-analysis course project: a full static, modal, and seismic-response pipeline on a five-story shear-type building. Linear systems solved by SOR (optimal relaxation around 1.65 cuts iterations from 552 to 105); the fundamental frequency found by inverse iteration in 8 steps (1.334 Hz); the first mode carries 84.7% effective mass; seismic response integrated by RK4 with 0.13 mm displacement error. Links SOR convergence, eigenvalue methods, and RK4 integration on one physical system."

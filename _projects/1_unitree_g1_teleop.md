@@ -56,7 +56,7 @@ A wearable-IMU teleoperation system for the Unitree G1 humanoid's upper limbs, d
 | Test | Metric | Result |
 |------|--------|--------|
 | Stationary noise | 3D position RMS | **3.83 mm** |
-| Arm-length constraint | radial deviation RMS | **0.40 mm** |
+| Arm-length constraint | radial residual RMS | **0.40 mm** |
 | Fixed-point repeatability | repeatability RMS | 13.9 mm |
 | Circle-trajectory consistency | relative error | 33.3% |
 
@@ -125,7 +125,7 @@ During long sessions the right arm occasionally entered **hardware protection** 
 
 ## Outputs
 
-- **Two invention patent disclosures** (prepared):
+- **Two invention disclosures** (drafted):
   - *Multi-node wireless-IMU upper-limb teleoperation solving method and system* — sensing & solving.
   - *Safe joint-target generation and dynamic limit control for humanoid upper limbs under multi-IMU teleoperation* — runtime safety.
 

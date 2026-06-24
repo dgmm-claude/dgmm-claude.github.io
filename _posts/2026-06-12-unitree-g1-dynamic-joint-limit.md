@@ -1,5 +1,6 @@
 ---
 layout: post
+category: research
 title: "Configuration-Aware Dynamic Joint Limits for Safe Teleoperation"
 date: 2026-06-12 21:00:00 +0800
 description: "The fix for the G1 hardware-protection anomaly: instead of a fixed software limit (the union of all reachable ranges — too loose), the limit becomes a function of the other joint angles. Dangerous joints the operator cannot easily feel (e.g. upper-arm yaw) are tightened per configuration, cutting the target angle before the mechanical limit is reached. Collision boundaries are pre-characterized in Isaac Lab / wheel-legged gym and validated on the real robot by creeping to about 0.9 of the limit. Condensed into a patent disclosure; future work extends to full-arm continuous collision-risk modeling."

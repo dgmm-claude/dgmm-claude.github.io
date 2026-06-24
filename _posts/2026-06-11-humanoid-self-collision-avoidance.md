@@ -1,5 +1,6 @@
 ---
 layout: post
+category: research
 title: "Reading: Self-Collision Avoidance for Humanoid Robots"
 date: 2026-06-11 21:00:00 +0800
 description: "A literature note motivated by the G1 hardware-protection anomaly. Two families of self-collision avoidance (SCA): offline planning (local minima, slow for high-DoF) and online (impedance potential from a simplified convex model, precision-versus-cost tradeoff). The key idea: collision is static given geometry and joint angles, so a differentiable collision-risk function can be learned. A 29-DoF robot is decomposed into submodules, and SVM, CPSP and NN are compared. This points toward a data-driven route beyond the current deterministic dynamic-limit fix."

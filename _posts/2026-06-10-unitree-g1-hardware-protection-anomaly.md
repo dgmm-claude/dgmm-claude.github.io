@@ -1,5 +1,6 @@
 ---
 layout: post
+category: research
 featured: true
 title: "Diagnosing Hardware-Protection Anomalies in Real-Robot Teleoperation"
 date: 2026-06-10 21:00:00 +0800

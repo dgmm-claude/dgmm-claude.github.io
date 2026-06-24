@@ -1,5 +1,6 @@
 ---
 layout: post
+category: engineering
 title: "Debugging FC2203S Half-Bridge MOSFET Burnout"
 date: 2026-03-21 21:00:00 +0800
 description: "A debugging log for the FC2203S half-bridge driver (open hardware). The first revision, lacking gate-protection diodes, free-wheeling diodes, and a bulk decoupling capacitor, failed quickly — NMOS body-diode breakdown, gate-drain and gate-source shorts. Investigation traced it to overly fast turn-on, residual Vs ringing partly fixed by a 100 uF capacitor, and a MOSFET rating mismatch resolved by a 60 V/80 A part and a re-tuned gate resistor; final turn-on about 400 ns. Also used by the smart-bartender pump driver."
