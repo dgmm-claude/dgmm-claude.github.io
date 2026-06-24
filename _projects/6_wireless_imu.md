@@ -38,4 +38,4 @@ related_publications: false
 - **磁力计校准**：运行时椭球校准并持久化至 NVS，3D 点云 + 球面覆盖热力图 + 范数曲线实时可视化
 - **工程化**：OTA 固件升级、锂电池电源管理 + 智能剩余时间预测、上位机 Dashboard 多设备管理
 
-> 技术栈：ESP32-C3 · ESP-IDF · ICM-20948 · VQF · WiFi UDP/TCP · mDNS ｜ 3D 打印外壳（STEP）+ BOM ｜ 开源：GitHub [@dgmm-claude](https://github.com/dgmm-claude)
+> 技术栈：ESP32-C3 · ESP-IDF · ICM-20948 · VQF · WiFi UDP/TCP · mDNS ｜ 3D 打印外壳（STEP）+ BOM ｜ 开源：GitHub [@dgmm-claude](https://github.com/dgmm-claude/WirelessIMU)
