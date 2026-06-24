@@ -43,7 +43,7 @@ My core strength is **system-level engineering**: closing the loop from physical
 
 **Representative work:** a **Unitree G1 upper-limb IMU teleoperation system** built as a full perception–estimation–control–safety loop — VQF fusion, analytical inverse kinematics, Isaac Lab Bayesian-optimized PD initialization, and configuration-aware joint limits; **3.83 mm stationary position RMS**, 448 simulation trials, two invention disclosures drafted. An **ORB-SLAM3 end-effector pose evaluation system** serving as an independent vision-inertial reference for cross-method characterization. And a **vision-based precision-guided flight system** (national-level project, +42.3% hit accuracy).
 
-> 📄 Full CV: [English PDF](/assets/pdf/CV_Zheng_Haowen_EN.pdf) ｜ [中文 PDF](/assets/pdf/CV_Zheng_Haowen_CN.pdf)
+> 📄 Full CV: [English PDF](/assets/pdf/CV_Zheng_Haowen_AcademicCV_EN.pdf) ｜ [中文 PDF](/assets/pdf/CV_Zheng_Haowen_CN.pdf)
 
 ---
 
