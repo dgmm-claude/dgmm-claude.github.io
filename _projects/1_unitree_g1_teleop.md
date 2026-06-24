@@ -41,7 +41,7 @@ A wearable-IMU teleoperation system for the Unitree G1 humanoid's upper limbs, d
 
 - **VQF 9-axis fusion:** replaces Madgwick/Mahony; decoupled inclination/heading estimation, adaptive accelerometer correction, online gyroscope-bias compensation, magnetic-disturbance rejection.
 - **Calibration:** v1 completes heading, mounting-tilt and IK calibration in a single 3-second lateral-arm pose; v2 adds a roll-axis refinement step (down / forward / lateral / roll). Persisted as JSON.
-- **Hybrid analytical-optimization IK:** YXZ-decomposed analytical solution (millisecond-level) + L-BFGS-B bounded optimization + multi-start search; 26–50% error reduction when exceeding limits.
+- **Hybrid analytical-optimization IK:** YXZ-decomposed analytical solution (millisecond-level) + L-BFGS-B bounded optimization + multi-start search; 26–50% reduction in bounded-IK orientation residual for limit-violating targets.
 - **Unified coordinate management:** 6 frames strictly defined; rotation-matrix Frobenius inner product avoids quaternion sign ambiguity; 7 unit tests cover full-chain consistency.
 
 <div class="row">
@@ -55,9 +55,9 @@ A wearable-IMU teleoperation system for the Unitree G1 humanoid's upper limbs, d
 
 | Test | Metric | Result |
 |------|--------|--------|
-| Stationary noise | σ_3D_RMS | **3.83 mm** |
-| Arm-length constraint | σ_radial | **0.40 mm** |
-| Fixed-point repeatability | σ_RMS | 13.9 mm |
+| Stationary noise | 3D position RMS | **3.83 mm** |
+| Arm-length constraint | radial deviation RMS | **0.40 mm** |
+| Fixed-point repeatability | repeatability RMS | 13.9 mm |
 | Circle-trajectory consistency | relative error | 33.3% |
 
 These are **stationary / short-horizon RMS figures** of the IMU-only kinematic chain (not absolute positioning against a metric ground truth). They are independently cross-characterized by the [ORB-SLAM3 vision-inertial system](/projects/2_orbslam3_pose/) to bound the error of the low-cost IMU-only approach.

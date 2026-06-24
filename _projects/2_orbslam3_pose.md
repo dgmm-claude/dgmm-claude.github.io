@@ -20,7 +20,7 @@ An Intel RealSense D435i mounted on the operator's forearm runs ORB-SLAM3's **IM
 
 | Test | Metric | Result | Level |
 |------|--------|--------|-------|
-| Stationary noise | σ_3D_RMS | **0.373 mm** | low noise |
+| Stationary noise | 3D position RMS | **0.373 mm** | sub-mm noise |
 | Length constraint | σ_radial | 23.5 mm (4.9%) | cm |
 | Fixed-point repeatability | σ_RMS | 9.2 mm | cm |
 | Trajectory consistency | σ_residual | 21.9 mm (plane RMS 6.48 mm) | cm |
