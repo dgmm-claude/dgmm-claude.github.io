@@ -2,7 +2,8 @@
 layout: page
 permalink: /engineering/
 title: Engineering Archive
-nav: false
+nav: true
+nav_order: 4
 description: Older engineering and coursework notes — non-circular gears, MOSFET debugging, modal analysis.
 ---
 
