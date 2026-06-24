@@ -101,6 +101,8 @@ pagination:
 
 {% endif %}
 
+  <h2>All Notes</h2>
+
   <ul class="post-list">
 
     {% if page.pagination.enabled %}
