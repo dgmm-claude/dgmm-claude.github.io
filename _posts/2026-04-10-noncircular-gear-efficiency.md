@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /engineering/noncircular-gear-efficiency/
 category: engineering
 title: "Efficiency Optimization of a Hand-Crank Generator with Non-Circular Gears"
 date: 2026-04-10 10:00:00 +0800

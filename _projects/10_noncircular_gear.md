@@ -42,4 +42,4 @@ related_publications: false
 - **参数化 DXF**：Python（ezdxf + shapely）一键生成，齿数 / 模数 / 压力角 / 轴孔可定制
 - **3D 打印闭环**：生成样件上机实测，验证效率提升
 
-> 技术栈：Python · numpy/scipy · matplotlib · ezdxf · shapely · 3D 打印 ｜ 延伸阅读：[非圆齿轮效率优化](/blog/2026/noncircular-gear-efficiency/)、[节曲线制造工艺](/blog/2026/noncircular-gear-manufacturing/)
+> 技术栈：Python · numpy/scipy · matplotlib · ezdxf · shapely · 3D 打印 ｜ 延伸阅读：[非圆齿轮效率优化](/engineering/noncircular-gear-efficiency/)、[节曲线制造工艺](/engineering/noncircular-gear-manufacturing/)

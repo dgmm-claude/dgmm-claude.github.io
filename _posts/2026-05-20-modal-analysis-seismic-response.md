@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /engineering/modal-analysis-seismic-response/
 category: engineering
 title: "Modal Analysis and Seismic Response of a Multi-DOF Structure"
 date: 2026-05-20 10:00:00 +0800

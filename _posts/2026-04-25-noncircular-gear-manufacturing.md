@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /engineering/noncircular-gear-manufacturing/
 category: engineering
 title: "Forward Derivation of Non-Circular-Gear Manufacturing (Three Pipelines)"
 date: 2026-04-25 10:00:00 +0800

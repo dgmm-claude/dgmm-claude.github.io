@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /engineering/fc2203s-half-bridge-burnout-debug/
 category: engineering
 title: "Debugging FC2203S Half-Bridge MOSFET Burnout"
 date: 2026-03-21 21:00:00 +0800

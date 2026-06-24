@@ -44,4 +44,4 @@ related_publications: false
 </div>
 <div class="caption">RK4 积分五自由度剪切型结构的地震动力响应。</div>
 
-> 技术栈：Python · numpy/scipy · matplotlib · SOR · 反幂法 · Runge-Kutta ｜ 关联：[PCB 焊垫热传导研究](/projects/9_pcb_thermal/)（数值方法同源）｜ 详解：[多自由度结构模态分析与地震响应](/blog/2026/modal-analysis-seismic-response/)
+> 技术栈：Python · numpy/scipy · matplotlib · SOR · 反幂法 · Runge-Kutta ｜ 关联：[PCB 焊垫热传导研究](/projects/9_pcb_thermal/)（数值方法同源）｜ 详解：[多自由度结构模态分析与地震响应](/engineering/modal-analysis-seismic-response/)
