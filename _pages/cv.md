@@ -1,13 +1,14 @@
 ---
-layout: cv
+layout: page
 permalink: /cv/
 title: CV
 nav: true
 nav_order: 5
 redirect: /assets/pdf/CV_Zheng_Haowen_EN.pdf
-cv_pdf: /assets/pdf/CV_Zheng_Haowen_EN.pdf
-cv_format: rendercv # options: rendercv, jsonresume
-description: Curriculum Vitae of Haowen Zheng.
-toc:
-  sidebar: left
+description: Curriculum Vitae of Haowen Zheng. (auto-redirects to the English PDF)
 ---
+
+<div style="text-align:center; margin-top:2rem;">
+  <p>Redirecting to the English CV PDF…</p>
+  <p>If it does not load automatically, <a href="/assets/pdf/CV_Zheng_Haowen_EN.pdf">click here</a>.</p>
+</div>
