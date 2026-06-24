@@ -128,6 +128,5 @@ During long sessions the right arm occasionally entered **hardware protection** 
 - **Two invention patent disclosures** (prepared):
   - *Multi-node wireless-IMU upper-limb teleoperation solving method and system* — sensing & solving.
   - *Safe joint-target generation and dynamic limit control for humanoid upper limbs under multi-IMU teleoperation* — runtime safety.
-- **Term defense report** with PyBullet replay + real-robot demo video; revised through two Codex review rounds.
 
 > Tech stack: Python · VQF · Isaac Lab / PyBullet · Bayesian optimization (GP+EI) · OpenGL · WiFi/UDP ｜ Hardware: Unitree G1 + **5× self-built [ESP32-C3 + ICM-20948 wireless IMU nodes](/projects/6_wireless_imu/)** (v2; v1 used 2×)
