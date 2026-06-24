@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "ORB-SLAM3 End-Effector Pose Evaluation"
-description: Independent vision-inertial reference for cross-method characterization · RealSense D435i + ORB-SLAM3 · 0.373 mm stationary RMS
+description: Independent vision-inertial comparison modality · RealSense D435i + ORB-SLAM3 · 0.373 mm stationary output noise
 img: assets/img/projects/08_slam_trajectory.png
 importance: 2
-category: 研究主线
+category: Featured Research
 related_publications: false
 ---
 
-An Intel RealSense D435i mounted on the operator's forearm runs ORB-SLAM3's **IMU_STEREO** mode to estimate end-effector pose in real time, serving as an **independent vision-inertial reference** against the [Unitree G1 IMU teleoperation system](/projects/1_unitree_g1_teleop/)'s dual-IMU forward-kinematics approach — characterizing each method's error profile rather than treating either as ground truth. I independently built the ORB-SLAM3 integration, calibration, evaluation tooling, and five quantitative tests.
+An Intel RealSense D435i mounted on the operator's forearm runs ORB-SLAM3's **IMU_STEREO** mode to estimate end-effector pose in real time, serving as an **independent vision-inertial comparison modality** against the [Unitree G1 IMU teleoperation system](/projects/1_unitree_g1_teleop/)'s dual-IMU forward-kinematics approach — characterizing each method's error profile rather than treating either as ground truth. I independently built the ORB-SLAM3 integration, calibration, evaluation tooling, and five quantitative tests.
 
 - **Sensor:** D435i stereo camera (848×480 @ 30 fps) + on-board BMI055 IMU @ 200 Hz
 - **Algorithm:** ORB-SLAM3 IMU_STEREO, visual-inertial joint optimization, real-time SE3 pose
@@ -20,7 +20,7 @@ An Intel RealSense D435i mounted on the operator's forearm runs ORB-SLAM3's **IM
 
 | Test | Metric | Result | Level |
 |------|--------|--------|-------|
-| Stationary noise | σ_3D_RMS | **0.373 mm** | sub-mm |
+| Stationary noise | σ_3D_RMS | **0.373 mm** | low noise |
 | Length constraint | σ_radial | 23.5 mm (4.9%) | cm |
 | Fixed-point repeatability | σ_RMS | 9.2 mm | cm |
 | Trajectory consistency | σ_residual | 21.9 mm (plane RMS 6.48 mm) | cm |
@@ -48,6 +48,6 @@ An Intel RealSense D435i mounted on the operator's forearm runs ORB-SLAM3's **IM
 | Repeatability σ_RMS | 9.2 mm | 13.9 mm | **SLAM ≈1.5×** |
 | Trajectory plane RMS | 6.48 mm | 8.83 mm | SLAM slightly |
 
-This is **independent performance characterization and complementarity analysis, not strict cross-validation** — there is no shared metric ground truth. The two methods are complementary: SLAM wins on stationary precision (visual feature locking, no attitude-drift amplification); the IMU chain wins on geometric consistency — a *structural* advantage of fixed arm-length parameters, not higher absolute accuracy. SLAM depends on environmental texture and a GPU workstation; the IMU chain is embedded-friendly and lighting-independent. An ideal architecture would fuse the two — SLAM for global position anchoring, IMU for high-rate, low-latency joint attitude.
+This is **independent performance characterization and complementarity analysis, not strict cross-validation** — there is no shared metric ground truth. The two methods are complementary: SLAM wins on stationary output noise (visual feature locking, no attitude-drift amplification); the IMU chain wins on geometric consistency — a *structural* advantage of fixed arm-length parameters, not higher absolute accuracy. SLAM depends on environmental texture and a GPU workstation; the IMU chain is embedded-friendly and lighting-independent. An ideal architecture would fuse the two — SLAM for global position anchoring, IMU for high-rate, low-latency joint attitude.
 
 > Tech stack: C++ · ORB-SLAM3 · RealSense D435i · Python · matplotlib ｜ Related: [Unitree G1 teleoperation](/projects/1_unitree_g1_teleop/) (the characterized system)

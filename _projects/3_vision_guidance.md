@@ -4,7 +4,7 @@ title: "Vision-Based Precision-Guided Flight System"
 description: National-level Innovation Training Program (PI) · Excellent conclusion · Two-stage guidance, +42.3% hit accuracy
 img: assets/img/projects/40_guidance_vision_pcb.png
 importance: 3
-category: 研究主线
+category: Featured Research
 related_publications: false
 ---
 

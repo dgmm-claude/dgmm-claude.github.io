@@ -1,10 +1,10 @@
 ---
 layout: page
-title: 非圆齿轮手摇发电机效率优化
-description: 工程制造课程项目 · 实测数据驱动 · 非圆齿轮变传动比使效率波动缩小 73%
+title: "Hand-Crank Generator Efficiency via Non-Circular Gears"
+description: "Manufacturing course project · data-driven · non-circular gear ratio narrows the efficiency spread by 73 percent"
 img: assets/img/projects/65_gear_design.png
 importance: 10
-category: 课程项目
+category: Coursework
 related_publications: false
 ---
 

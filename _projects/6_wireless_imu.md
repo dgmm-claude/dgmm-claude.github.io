@@ -4,7 +4,7 @@ title: ESP32 无线 IMU 姿态采集节点
 description: 宇树 G1 遥操系统实际采用的感知节点（已替代成品模块）· 开源 · ESP32-C3 + ICM-20948 + VQF
 img: assets/img/projects/实物图1.png
 importance: 6
-category: 工程实践
+category: Selected Engineering
 related_publications: false
 ---
 

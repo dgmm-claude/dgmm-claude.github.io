@@ -1,10 +1,10 @@
 ---
 layout: page
-title: PCB 焊垫热传导特性研究
-description: 数学物理方法课程综合项目 · PDE 建模 + 自研 FEM + ANSYS + 实测 · 热孔使时间常数缩短 5.5×
+title: "PCB Pad Thermal-Conduction Study"
+description: "Math-physics methods course project · PDE modeling + custom FEM + ANSYS + measurement · thermal vias cut the time constant 5.5x"
 img: assets/img/projects/09_pcb_via_3d.png
 importance: 9
-category: 工程实践
+category: Selected Engineering
 related_publications: false
 ---
 

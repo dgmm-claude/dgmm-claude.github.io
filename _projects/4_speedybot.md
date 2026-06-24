@@ -1,10 +1,10 @@
 ---
 layout: page
-title: SpeedyBot 低成本自主扫地机器人
-description: 微电路系统设计课程大作业（组长）· ESP32-S3 + ROS2 全栈，86 页技术报告
+title: "SpeedyBot: Low-Cost Autonomous Sweeping Robot"
+description: "Microelectronics course capstone (team lead) · ESP32-S3 + ROS2 full stack, 86-page report"
 img: assets/img/projects/22_speedybot_prototype.jpeg
 importance: 4
-category: 工程实践
+category: Selected Engineering
 related_publications: false
 ---
 

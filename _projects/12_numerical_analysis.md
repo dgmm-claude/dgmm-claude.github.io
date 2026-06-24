@@ -1,10 +1,10 @@
 ---
 layout: page
-title: 工程数值分析：方程求根与结构模态
-description: 工程数值分析课程 · 非线性求根（二分/牛顿/遗传/粒子群）+ 多自由度模态与地震响应（SOR/反幂法/RK4）
+title: "Numerical Analysis: Root-Finding and Structural Modes"
+description: "Numerical analysis course · nonlinear root-finding (bisection/Newton/GA/PSO) + multi-DOF modal and seismic response (SOR/inverse-power/RK4)"
 img: assets/img/projects/62_numerical_convergence.png
 importance: 12
-category: 课程项目
+category: Coursework
 related_publications: false
 ---
 

@@ -1,10 +1,10 @@
 ---
 layout: page
-title: 创意情感交互台灯控制系统
-description: 自动控制原理课程综合项目 · Buck 闭环控制 + Apple Elegant 多模态情感交互
+title: "Affective Interactive Desk Lamp Control System"
+description: "Automatic Control course project · Buck closed-loop control + multi-modal affective interaction"
 img: assets/img/projects/12_lamp_hardware.png
 importance: 5
-category: 课程项目
+category: Coursework
 related_publications: false
 ---
 

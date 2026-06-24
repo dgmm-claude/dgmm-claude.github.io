@@ -5,7 +5,7 @@ permalink: /projects/
 description: 研究作品集 · Research Portfolio
 nav: true
 nav_order: 2
-display_categories: ["研究主线", "工程实践", "课程项目"]
+display_categories: ["Featured Research", "Selected Engineering", "Coursework"]
 horizontal: false
 ---
 

@@ -4,7 +4,7 @@ title: "Wearable IMU Teleoperation for Unitree G1"
 description: Calibrated multi-IMU motion mapping with analytical IK and configuration-aware safety constraints.
 img: assets/img/projects/04_g1_robot.png
 importance: 1
-category: 研究主线
+category: Featured Research
 related_publications: false
 ---
 
