@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-nav: true
+nav: false
 nav_order: 1
 subtitle: <a href="https://eie.cqu.edu.cn/">National Excellent Engineer College, Chongqing University</a> · Robotics Engineering · Junior
 
