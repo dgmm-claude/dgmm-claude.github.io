@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{#
+{% comment %}
   Local layout for PROJECT detail pages (`_projects/*.md` use `layout: project`).
   Based on the theme's `page.liquid`, extended with the bilingual layer:
     • bilingual title + abstract (English default);
@@ -10,7 +10,7 @@ layout: default
     • bilingual body with an optional second-language full text pulled from the
       `i18n_content` collection (see _layouts/default.liquid comment);
     • Related Notes index (from page.related_notes) rendered via related_notes.liquid.
-#}
+{% endcomment %}
 {% assign body_lang = page.body_lang | default: 'zh' %}
 {% assign alt_lang = '' %}
 {% if page.has_zh_content and page.has_en_content %}

@@ -1,5 +1,5 @@
 <!doctype html>
-{#
+{% comment %}
   ============================================================================
   Local override of theme layout `default.liquid` (al_folio_core gem).
   Purpose: wire in the site-wide bilingual (EN / 中文) layer WITHOUT touching
@@ -16,11 +16,11 @@
   Everything else is identical to the gem layout so redirects, TOC sidebar,
   footer and script includes keep working unchanged.
   ============================================================================
-#}
+{% endcomment %}
 <html lang="{{ site.lang }}" data-lang="en">
   <!-- Head -->
   <head>
-    {# --- 1. Resolve language before paint (no-flash, no-JS-safe) --- #}
+    {% comment %}--- 1. Resolve language before paint (no-flash, no-JS-safe) ---{% endcomment %}
     <script>
       (function () {
         try {
@@ -49,17 +49,19 @@
     {% endif %}
     {% include head.liquid %}
 
-    {# --- Bilingual SEO hints consumed by assets/js/i18n.js --- #}
-    {# In English mode (default) the static <title>/<meta description> from #}
-    {# metadata.liquid are already English; these let i18n.js swap them in #}
-    {# Chinese mode. Fall back to the English value when no _zh variant exists. #}
+    {% comment %}
+      --- Bilingual SEO hints consumed by assets/js/i18n.js ---
+      In English mode (default) the static title/meta description from
+      metadata.liquid are already English; these let i18n.js swap them in
+      Chinese mode. Fall back to the English value when no _zh variant exists.
+    {% endcomment %}
     <meta name="i18n-sitename" content="{{ site.first_name }} {{ site.last_name }}">
     <meta name="i18n-title-en" content="{{ page.title }}">
     <meta name="i18n-title-zh" content="{{ page.title_zh | default: page.title }}">
     <meta name="i18n-desc-en" content="{{ page.description | default: site.description }}">
     <meta name="i18n-desc-zh" content="{{ page.description_zh | default: page.description | default: site.description_zh }}">
 
-    {# --- 2. Bilingual chrome CSS (inlined; PurgeCSS-safe) --- #}
+    {% comment %}--- 2. Bilingual chrome CSS (inlined; PurgeCSS-safe) ---{% endcomment %}
     <style>
       /* ---- Language-gated content blocks ----
          Elements tagged data-lang="en" are English-only; data-lang="zh" are
@@ -186,7 +188,7 @@
     <!-- JavaScripts -->
     {% include scripts.liquid %}
 
-    {# --- 3. Bilingual engine (deferred) --- #}
+    {% comment %}--- 3. Bilingual engine (deferred) ---{% endcomment %}
     <script defer src="{{ '/assets/js/i18n.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
   </body>
 </html>

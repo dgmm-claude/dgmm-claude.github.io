@@ -1,13 +1,13 @@
 ---
 layout: default
 ---
-{#
+{% comment %}
   Local override of theme layout `about.liquid` (al_folio_core gem).
   Only change: the appended section headers ("news", "latest posts") are made
   bilingual (swapped by i18n.js) and "latest posts" now links to /notes/.
   Everything else (profile, content, news, latest_posts, selected_papers,
   social, newsletter) is identical to the upstream layout.
-#}
+{% endcomment %}
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">

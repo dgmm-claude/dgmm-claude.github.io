@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{#
+{% comment %}
   Local override of theme layout `post.liquid` (al_folio_core gem).
   Adds the bilingual layer for NOTE detail pages:
     • title swaps EN/中文 (English default → no-JS safe);
@@ -13,7 +13,7 @@ layout: default
       docs). When only one body exists it is shown in both modes.
   `has_zh_content` / `has_en_content` mean a COMPLETE body exists (never just a
   title/abstract). `body_lang` is the language of the Markdown body in the file.
-#}
+{% endcomment %}
 {% assign year = page.date | date: '%Y' %}
 {% assign tags = page.tags | join: '' %}
 {% assign categories = page.categories | join: '' %}

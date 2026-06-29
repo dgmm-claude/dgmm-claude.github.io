@@ -1,5 +1,5 @@
 <header>
-  {#
+  {% comment %}
     ============================================================================
     Local override of theme include `header.liquid` (al_folio_core gem).
     Changes vs. upstream:
@@ -11,7 +11,7 @@
       • A compact EN | 中文 language switcher is appended to the nav list.
     The active-state, search toggle and dark-mode toggle logic is unchanged.
     ============================================================================
-  #}
+  {% endcomment %}
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
@@ -133,7 +133,7 @@
             {% endif %}
           {% endfor %}
 
-          {# ---- Language switcher: EN | 中文 ---- #}
+          {% comment %}---- Language switcher: EN | 中文 ----{% endcomment %}
           <li class="nav-item lang-switch" aria-label="Language">
             <button class="lang-switch__btn" type="button" data-lang-toggle="en" aria-pressed="true" title="English">EN</button>
             <span class="lang-switch__sep" aria-hidden="true">|</span>
