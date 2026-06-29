@@ -1,11 +1,19 @@
 ---
-layout: page
+layout: project
 title: "Numerical Analysis: Root-Finding and Structural Modes"
+title_en: "Numerical Analysis: Root-Finding and Structural Modes"
+title_zh: "工程数值分析：求根与结构模态"
 description: "Numerical analysis course · nonlinear root-finding (bisection/Newton/GA/PSO) + multi-DOF modal and seismic response (SOR/inverse-power/RK4)"
+description_en: "Numerical analysis course · nonlinear root-finding (bisection/Newton/GA/PSO) + multi-DOF modal and seismic response (SOR/inverse-power/RK4)"
+description_zh: "工程数值分析课程 · 非线性求根（二分/牛顿/GA/PSO）+ 多自由度模态与地震响应（SOR/反幂法/RK4）"
 img: assets/img/projects/62_numerical_convergence.png
 importance: 12
 category: Coursework
 related_publications: false
+translation_key: numerical-analysis
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 ---
 
 > **English summary:** A numerical-analysis course project with two assignments on one physical system. (1) Nonlinear root-finding — comparing bisection, Newton, and meta-heuristics (GA, PSO) for convergence and global search. (2) A full static-modes-seismic pipeline on a five-story shear-type building: linear systems by SOR (optimal ω≈1.65 cuts iterations from 552 to 105), the fundamental frequency by inverse power iteration in 8 steps (1.334 Hz), the first mode carrying 84.7% effective mass, and seismic response by RK4 with 0.13 mm displacement error. Links SOR convergence, eigenvalue methods, and RK4 integration on one model.

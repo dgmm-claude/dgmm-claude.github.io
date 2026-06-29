@@ -1,11 +1,20 @@
 ---
-layout: page
+layout: project
 title: "ORB-SLAM3 End-Effector Pose Evaluation"
+title_en: "ORB-SLAM3 End-Effector Pose Evaluation"
+title_zh: "ORB-SLAM3 末端位姿评估系统"
 description: Independent vision-inertial comparison modality · RealSense D435i + ORB-SLAM3 · 0.373 mm stationary output noise
+description_en: Independent vision-inertial comparison modality · RealSense D435i + ORB-SLAM3 · 0.373 mm stationary output noise
+description_zh: 独立视觉惯性对比模态 · RealSense D435i + ORB-SLAM3 · 静态输出噪声 0.373 mm
 img: assets/img/projects/08_slam_trajectory.png
 importance: 2
 category: Featured Research
 related_publications: false
+translation_key: orbslam3-pose
+body_lang: en        # the Markdown body below is written in English
+has_zh_content: false
+has_en_content: true
+featured_on_about: true
 ---
 
 An Intel RealSense D435i mounted on the operator's forearm runs ORB-SLAM3's **IMU_STEREO** mode to estimate end-effector pose in real time, serving as an **independent vision-inertial comparison modality** against the [Unitree G1 IMU teleoperation system](/projects/1_unitree_g1_teleop/)'s dual-IMU forward-kinematics approach — characterizing each method's error profile rather than treating either as ground truth. I independently built the ORB-SLAM3 integration, calibration, evaluation tooling, and five quantitative tests.

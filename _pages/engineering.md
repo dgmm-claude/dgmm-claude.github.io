@@ -1,30 +1,20 @@
 ---
-layout: page
+layout: default
 permalink: /engineering/
 title: Engineering Archive
-nav: true
+nav: false
 nav_order: 4
-description: Older engineering and coursework notes — non-circular gears, MOSFET debugging, modal analysis.
+redirect: /notes/#engineering-notes
+description: Engineering Archive has merged into Notes (Engineering section). Redirecting…
 ---
 
-<div class="post">
-
-<p>Earlier engineering and coursework notes, kept separate from the robotics <a href="/blog/">Technical Notes</a>.</p>
-
-<ul class="post-list">
-{% assign postlist = site.posts | where: "category", "engineering" %}
-{% for post in postlist %}
-{% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
-<li>
-  <h3>
-    <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-  </h3>
-  <p>{{ post.description }}</p>
-  <p class="post-meta">
-    {{ read_time }} min read &nbsp; · &nbsp; {{ post.date | date: "%B %d, %Y" }}
+<!-- pages/engineering.md — compatibility redirect to /notes/#engineering-notes -->
+<div class="post" style="text-align:center; margin-top:2rem;">
+  <p>
+    <span data-zh-text="工程归档已合并到「笔记」页面的工程笔记分区，3 秒后自动跳转……" data-en-text="Engineering Archive has merged into the Notes page (Engineering Notes section). Redirecting in 3 seconds…">Engineering Archive has merged into the Notes page (Engineering Notes section). Redirecting in 3 seconds…</span>
   </p>
-</li>
-{% endfor %}
-</ul>
-
+  <p>
+    <span data-zh-text="若未自动跳转，" data-en-text="If it does not load automatically, ">If it does not load automatically, </span>
+    <a href="/notes/#engineering-notes"><span data-zh-text="点击前往工程笔记" data-en-text="click here for Engineering Notes">click here for Engineering Notes</span></a>.
+  </p>
 </div>

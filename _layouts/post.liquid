@@ -1,0 +1,136 @@
+---
+layout: default
+---
+{#
+  Local override of theme layout `post.liquid` (al_folio_core gem).
+  Adds the bilingual layer for NOTE detail pages:
+    • title swaps EN/中文 (English default → no-JS safe);
+    • language-availability badge under the title meta;
+    • "full text unavailable" notices (English-mode notice when no English full
+      text exists; Chinese-mode notice when no Chinese full text exists);
+    • body rendering supports a SECOND full-text language stored in the
+      `i18n_content` collection (see _layouts/default.liquid comment + final
+      docs). When only one body exists it is shown in both modes.
+  `has_zh_content` / `has_en_content` mean a COMPLETE body exists (never just a
+  title/abstract). `body_lang` is the language of the Markdown body in the file.
+#}
+{% assign year = page.date | date: '%Y' %}
+{% assign tags = page.tags | join: '' %}
+{% assign categories = page.categories | join: '' %}
+{% assign url_beginning = page.url | slice: 0, 6 %}
+{% assign body_lang = page.body_lang | default: 'zh' %}
+{% assign alt_lang = '' %}
+{% if page.has_zh_content and page.has_en_content %}
+  {% if body_lang == 'en' %}{% assign alt_lang = 'zh' %}{% else %}{% assign alt_lang = 'en' %}{% endif %}
+{% endif %}
+{% assign alt_doc = nil %}
+{% if alt_lang != '' and page.translation_key %}
+  {% assign alt_doc = site.i18n_content | where: 'translation_key', page.translation_key | where: 'lang', alt_lang | first %}
+{% endif %}
+
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title"><span data-zh-text="{{ page.title_zh | default: page.title }}" data-en-text="{{ page.title }}">{{ page.title }}</span></h1>
+    <p class="post-meta">
+      <span data-zh-text="创建于" data-en-text="Created on">Created on</span> {{ page.date | date: '%B %d, %Y' }}
+      {% if page.author %}<span data-zh-text="，作者" data-en-text="by">by</span> {{ page.author }}{% endif %}
+      {% assign last_date = page.last_modified_at | default: page.last_updated %}
+      {% if last_date %}, <span data-zh-text="最后更新于" data-en-text="last updated on">last updated on</span> {{ last_date | date: '%B %d, %Y' }}{% endif %}
+      {% if page.meta %}• {{ page.meta }}{% endif %}
+    </p>
+    <p class="post-tags">
+      {% if url_beginning == '/blog/' %}
+        <a href="{{ year | prepend: '/blog/' | relative_url }}"> <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
+      {% else %}
+        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
+      {% endif %}
+      {% if tags != '' %}
+        &nbsp; &middot; &nbsp;
+        {% for tag in page.tags %}
+          {% if url_beginning == '/blog/' %}
+            <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"> <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
+          {% else %}
+            <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
+          {% endif %}
+          {% unless forloop.last %}
+            &nbsp;
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+
+      {% if categories != '' %}
+        &nbsp; &middot; &nbsp;
+        {% for category in page.categories %}
+          {% if url_beginning == '/blog/' %}
+            <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}"> <i class="fa-solid fa-tag fa-sm"></i> {{ category -}}</a>
+          {% else %}
+            <i class="fa-solid fa-tag fa-sm"></i> {{ category }}
+          {% endif %}
+          {% unless forloop.last %}
+            &nbsp;
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+    </p>
+    {% include lang_badge.liquid has_zh=page.has_zh_content has_en=page.has_en_content %}
+  </header>
+
+  <article class="post-content">
+    {% if page.toc and page.toc.beginning %}
+      <div id="table-of-contents">
+        {% toc %}
+      </div>
+      <hr>
+    {% endif %}
+
+    {% comment %} Language availability notices (only when a full text is missing) {% endcomment %}
+    {% unless page.has_en_content %}
+      <div class="i18n-notice i18n-notice-en" role="note">
+        English full text is not available yet. The original Chinese text is shown below.
+      </div>
+    {% endunless %}
+    {% unless page.has_zh_content %}
+      <div class="i18n-notice i18n-notice-zh" role="note">
+        中文全文暂不可用，以下显示英文原文（Chinese full text is not available yet; the English original is shown below）.
+      </div>
+    {% endunless %}
+
+    {% comment %} Body: render both languages when a translation exists in the
+    i18n_content collection; otherwise the single embedded body shows in both
+    modes (the notice above explains the fallback). {% endcomment %}
+    {% if alt_doc %}
+      <div id="markdown-content" data-lang="{{ body_lang }}">{{ content }}</div>
+      <div data-lang="{{ alt_lang }}">{{ alt_doc.content }}</div>
+    {% else %}
+      <div id="markdown-content">{{ content }}</div>
+    {% endif %}
+  </article>
+
+  {% if page.citation %}
+    {% include citation.liquid %}
+  {% endif %}
+
+  {% if page.related_publications %}
+    <h2>References</h2>
+    <div class="publications">
+      {% bibliography --group_by none --cited_in_order %}
+    </div>
+  {% endif %}
+
+  {% if site.related_blog_posts and site.related_blog_posts.enabled %}
+    {% if page.related_posts == null or page.related_posts %}
+      {% include related_posts.liquid %}
+    {% endif %}
+  {% endif %}
+
+  {% if site.plugins contains 'al_comments' %}
+    {% include plugins/al_comments.liquid %}
+  {% endif %}
+</div>

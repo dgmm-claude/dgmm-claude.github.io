@@ -1,0 +1,33 @@
+{%- comment -%}
+  ============================================================================
+  lang_badge.liquid — reusable language-availability chip.
+  ----------------------------------------------------------------------------
+  Params (passed by the caller):
+    has_zh : bool — a FULL Chinese body exists
+    has_en : bool — a FULL English body exists
+  IMPORTANT: a title or abstract alone never counts as "full text". Only set
+  has_zh/has_en when a complete body in that language actually exists.
+
+  The chip is bilingual: data-en-text / data-zh-text are swapped by i18n.js.
+  It renders in the muted (low-contrast) style whenever either full text is
+  missing, and never uses flags or large color blocks.
+  ============================================================================
+{%- endcomment -%}
+{%- assign both = false -%}
+{%- if include.has_zh and include.has_en -%}{%- assign both = true -%}{%- endif -%}
+{%- if both -%}
+  {%- assign en_text = '中文全文 · English full text' -%}
+  {%- assign zh_text = '中文全文 · 英文全文' -%}
+{%- elsif include.has_zh -%}
+  {%- assign en_text = 'Chinese full text · English title & abstract' -%}
+  {%- assign zh_text = '中文全文 · 暂无英文全文' -%}
+{%- elsif include.has_en -%}
+  {%- assign en_text = 'English full text' -%}
+  {%- assign zh_text = '英文全文 · 暂无中文全文' -%}
+{%- else -%}
+  {%- assign en_text = '' -%}
+  {%- assign zh_text = '' -%}
+{%- endif -%}
+{%- if en_text != '' -%}
+<span class="lang-badge{% unless both %} lang-badge--muted{% endunless %}" data-zh-text="{{ zh_text }}" data-en-text="{{ en_text }}" role="note" aria-label="Language availability: {{ en_text }}">{{ en_text }}</span>
+{%- endif -%}

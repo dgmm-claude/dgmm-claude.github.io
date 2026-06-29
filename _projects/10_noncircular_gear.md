@@ -1,11 +1,19 @@
 ---
-layout: page
+layout: project
 title: "Hand-Crank Generator Efficiency via Non-Circular Gears"
+title_en: "Hand-Crank Generator Efficiency via Non-Circular Gears"
+title_zh: "手摇发电机效率优化：非圆齿轮"
 description: "Manufacturing course project · data-driven · non-circular gear ratio narrows the efficiency spread by 73 percent"
+description_en: "Manufacturing course project · data-driven · non-circular gear ratio narrows the efficiency spread by 73 percent"
+description_zh: "工程制造课程项目 · 数据驱动 · 非圆齿轮变传动比将效率波动收窄约 73%"
 img: assets/img/projects/65_gear_design.png
 importance: 10
 category: Coursework
 related_publications: false
+translation_key: noncircular-gear
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 ---
 
 > **English summary:** A manufacturing-engineering course project optimizing a hand-crank generator with a non-circular gear whose transmission ratio varies continuously with crank angle, locking the operating point in the high-efficiency region instead of sweeping across high and low efficiency each revolution. Driven by measured torque-speed data from an 83KV motor (100 ms synchronous sampling), the instantaneous optimal ratio is inverted from CSV logs, the pitch curve is designed to mesh with a circular gear, and a parameterized DXF (ezdxf + shapely) is 3D-printed for validation. The efficiency spread narrows by about 73% and the minimum efficiency rises from 85.67% to 92.86% — raising the floor, not the peak.

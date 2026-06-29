@@ -1,11 +1,19 @@
 ---
-layout: page
+layout: project
 title: "Smart Bartender Robot (Generation 2 and 3)"
+title_en: "Smart Bartender Robot (Generation 2 and 3)"
+title_zh: "智能调酒机器人（二代与三代）"
 description: "Team project · all software + PCB hardware · Gen 2 ran three months zero-failure"
+description_en: "Team project · all software + PCB hardware · Gen 2 ran three months zero-failure"
+description_zh: "团队项目 · 全部软件 + PCB 硬件 · 二代连续运行 3 个月零故障"
 img: assets/img/projects/14_bartender_gen3_photo.jpg
 importance: 7
 category: Selected Engineering
 related_publications: false
+translation_key: bartender
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 ---
 
 > **English summary:** A team smart-bartender robot; I owned all software and the PCB hardware. Two iterations (Generation 2 and 3) across ten functional modules and 2000+ lines of core code: recipe management, precise dosing (pump + flow meter), stirring, refrigeration/lighting, an LVGL touch UI, WiFi remote ordering, OTA updates, and fault self-checks, all scheduled by FreeRTOS. The Generation 2 prototype ran continuously for over three months with zero failures, validating the firmware architecture and hardware reliability — the main lesson being how to iterate a multi-actuator embedded product from first prototype to a robust long-running system.

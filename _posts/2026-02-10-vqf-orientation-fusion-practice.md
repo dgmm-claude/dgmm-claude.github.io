@@ -5,6 +5,14 @@ featured: true
 title: "VQF 9-Axis Attitude Fusion in Practice"
 date: 2026-02-10 21:00:00 +0800
 description: "Why the teleoperation system chose VQF over Madgwick/Mahony: decoupled inclination/heading estimation, the physical meaning of the time constants tau_acc and tau_mag, online gyroscope-bias compensation, and adaptive magnetic-disturbance rejection. VQF estimates inclination using only the accelerometer (low-pass filtered, parameterized by tau_acc) and heading using only the magnetometer horizontal projection, so the magnetometer never contaminates inclination. Engineering notes: ICM-20948 at 225 Hz with local real-time solving, runtime ellipsoidal magnetometer calibration stored in NVS, and a 6-axis fallback mode."
+description_en: "Why the teleoperation system chose VQF over Madgwick/Mahony: decoupled inclination/heading estimation, the physical meaning of the time constants tau_acc and tau_mag, online gyroscope-bias compensation, and adaptive magnetic-disturbance rejection. VQF estimates inclination using only the accelerometer (low-pass filtered, parameterized by tau_acc) and heading using only the magnetometer horizontal projection, so the magnetometer never contaminates inclination. Engineering notes: ICM-20948 at 225 Hz with local real-time solving, runtime ellipsoidal magnetometer calibration stored in NVS, and a 6-axis fallback mode."
+description_zh: "为何遥操系统选择 VQF 而非 Madgwick/Mahony：解耦的倾角/航向估计、时间常数 tau_acc 与 tau_mag 的物理含义、在线陀螺零偏补偿与自适应磁干扰抑制。VQF 仅用加速度计估计倾角（低通滤波，由 tau_acc 参数化）、仅用磁力计水平投影估计航向，磁力计不会污染倾角。工程要点：ICM-20948 225 Hz 本地实时解算、运行时椭球磁力计校准存入 NVS、六轴回退模式。"
+title_en: "VQF 9-Axis Attitude Fusion in Practice"
+title_zh: "VQF 九轴姿态融合的工程实践"
+translation_key: vqf-orientation-fusion-practice
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 tags: IMU VQF 姿态融合 滤波 宇树G1
 categories: 技术详解
 ---

@@ -1,11 +1,19 @@
 ---
-layout: page
+layout: project
 title: "Affective Interactive Desk Lamp Control System"
+title_en: "Affective Interactive Desk Lamp Control System"
+title_zh: "情感交互台灯控制系统"
 description: "Automatic Control course project · Buck closed-loop control + multi-modal affective interaction"
+description_en: "Automatic Control course project · Buck closed-loop control + multi-modal affective interaction"
+description_zh: "自动控制原理课程项目 · Buck 闭环控制 + 多模态情感交互"
 img: assets/img/projects/12_lamp_hardware.png
 importance: 5
 category: Coursework
 related_publications: false
+translation_key: emotional-lamp
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 ---
 
 > **English summary:** An Automatic Control course project (independent) in two parts. The base part covers synchronous Buck converter modeling and closed-loop control — PSIM simulation, STM32 digital PID with voltage/current dual loops, and Bode-plot frequency-domain stability analysis. The comprehensive part is an affective desk lamp: a Raspberry Pi CM5 with MediaPipe (gesture/expression) and iFlytek ASR perceives the user, an STM32F103 drives a 3-DoF mechanism via inverse kinematics to orient the head, and an affective-state model maps multi-modal input to expressive posture and lighting. Combines power-electronics control with embodied affective interaction.

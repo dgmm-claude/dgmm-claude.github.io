@@ -1,11 +1,19 @@
 ---
-layout: page
+layout: project
 title: "SpeedyBot: Low-Cost Autonomous Sweeping Robot"
+title_en: "SpeedyBot: Low-Cost Autonomous Sweeping Robot"
+title_zh: "SpeedyBot：低成本自主清扫机器人"
 description: "Microelectronics course capstone (team lead) · ESP32-S3 + ROS2 full stack, 86-page report"
+description_en: "Microelectronics course capstone (team lead) · ESP32-S3 + ROS2 full stack, 86-page report"
+description_zh: "微电子课程综合设计（组长）· ESP32-S3 + ROS2 全栈，86 页报告"
 img: assets/img/projects/22_speedybot_prototype.jpeg
 importance: 4
 category: Selected Engineering
 related_publications: false
+translation_key: speedybot
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 ---
 
 > **English summary:** A low-cost autonomous sweeping robot built as a microelectronics course capstone (team lead, 3 members), spanning the full stack — custom PCB (motor drive, sensor interface, power management), ESP32-S3 firmware (FreeRTOS, PlatformIO), and a ROS2 Humble host running Cartographer SLAM with Nav2 planning and obstacle avoidance, plus a self-developed web UI for remote mapping, targeted cleaning, and status monitoring. End-to-end control latency was measured. Output: an 86-page technical report.

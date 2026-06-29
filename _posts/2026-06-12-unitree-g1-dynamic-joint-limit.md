@@ -4,6 +4,14 @@ category: research
 title: "Configuration-Aware Dynamic Joint Limits for Safe Teleoperation"
 date: 2026-06-12 21:00:00 +0800
 description: "The fix for the G1 hardware-protection anomaly: instead of a fixed software limit (the union of all reachable ranges — too loose), the limit becomes a function of the other joint angles. Dangerous joints the operator cannot easily feel (e.g. upper-arm yaw) are tightened per configuration, cutting the target angle before the mechanical limit is reached. Collision boundaries are pre-characterized in Isaac Lab / wheel-legged gym and validated on the real robot by creeping to about 0.9 of the limit. Condensed into a patent disclosure; future work extends to full-arm continuous collision-risk modeling."
+description_en: "The fix for the G1 hardware-protection anomaly: instead of a fixed software limit (the union of all reachable ranges — too loose), the limit becomes a function of the other joint angles. Dangerous joints the operator cannot easily feel (e.g. upper-arm yaw) are tightened per configuration, cutting the target angle before the mechanical limit is reached. Collision boundaries are pre-characterized in Isaac Lab / wheel-legged gym and validated on the real robot by creeping to about 0.9 of the limit. Condensed into a patent disclosure; future work extends to full-arm continuous collision-risk modeling."
+description_zh: "G1 硬件保护异常的修复：限位不再是固定软件限位（所有可达范围的并集——过松），而是其他关节角的函数。操作者难以感知的危险关节（如上臂偏航）按构型逐个收紧，在到达机械限位前就削减目标角。碰撞边界在 Isaac Lab / 轮腿 gym 中预表征，并在真机上以约 0.9 倍限位爬行验证。凝练为专利交底；未来工作扩展到全臂连续碰撞风险建模。"
+title_en: "Configuration-Aware Dynamic Joint Limits for Safe Teleoperation"
+title_zh: "面向安全遥操的构型相关动态关节限位"
+translation_key: unitree-g1-dynamic-joint-limit
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 tags: 机器人 宇树G1 遥操 安全 动态限位
 categories: 工程实践
 _styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"

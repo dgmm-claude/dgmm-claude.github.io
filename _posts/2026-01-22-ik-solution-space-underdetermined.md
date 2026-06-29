@@ -5,6 +5,14 @@ featured: true
 title: "Why Forearm Pose + Shoulder Distance Cannot Uniquely Locate a Point"
 date: 2026-01-22 21:00:00 +0800
 description: "A rigorous derivation showing that knowing the forearm's pose, a point's distance to the shoulder, and the arm lengths still does not uniquely determine the point's 3D position — the solution set is a one-parameter family, not a single point. This underdetermination explains why a pose-only IMU scheme must add extra constraints (multiple IMUs, calibration, magnetometer) to localize. Geometrically the distance constraint is a sphere, the pose a ray, and the arm-length constraint another sphere, whose intersection is generally a curve."
+description_en: "A rigorous derivation showing that knowing the forearm's pose, a point's distance to the shoulder, and the arm lengths still does not uniquely determine the point's 3D position — the solution set is a one-parameter family, not a single point. This underdetermination explains why a pose-only IMU scheme must add extra constraints (multiple IMUs, calibration, magnetometer) to localize. Geometrically the distance constraint is a sphere, the pose a ray, and the arm-length constraint another sphere, whose intersection is generally a curve."
+description_zh: "严格推导：已知前臂姿态、某点到肩部的距离与臂长，仍无法唯一确定该点的三维位置——解集是单参数族而非单点。这种欠定性解释了仅姿态的 IMU 方案为何需要额外约束（多 IMU、标定、磁力计）才能定位。几何上，距离约束是球面、姿态是射线、臂长约束是另一个球面，三者交一般为曲线。"
+title_en: "Why Forearm Pose + Shoulder Distance Cannot Uniquely Locate a Point"
+title_zh: "为何前臂姿态 + 肩距无法唯一确定一点的位置"
+translation_key: ik-solution-space-underdetermined
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 tags: 逆运动学 数学 解空间 IMU 遥操
 categories: 数学推导
 ---

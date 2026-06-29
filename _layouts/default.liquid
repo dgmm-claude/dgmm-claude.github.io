@@ -1,0 +1,192 @@
+<!doctype html>
+{#
+  ============================================================================
+  Local override of theme layout `default.liquid` (al_folio_core gem).
+  Purpose: wire in the site-wide bilingual (EN / 中文) layer WITHOUT touching
+  the gem. Only three things are added on top of the upstream layout:
+    1. A tiny inline <script> at the very top of <head> that resolves the
+       active language BEFORE first paint and stamps it onto <html data-lang>.
+       This prevents a language flash and keeps the page readable with JS off
+       (English is the static default baked into the markup).
+       Priority: ?lang=en|zh  >  localStorage('lang')  >  'en'.
+    2. A small inline <style> block with the bilingual chrome CSS (language
+       switcher, availability badges, language-gated blocks/notices). Inlined
+       so it is never stripped by PurgeCSS.
+    3. The bilingual engine assets/js/i18n.js, loaded deferred.
+  Everything else is identical to the gem layout so redirects, TOC sidebar,
+  footer and script includes keep working unchanged.
+  ============================================================================
+#}
+<html lang="{{ site.lang }}" data-lang="en">
+  <!-- Head -->
+  <head>
+    {# --- 1. Resolve language before paint (no-flash, no-JS-safe) --- #}
+    <script>
+      (function () {
+        try {
+          var p = new URLSearchParams(window.location.search).get('lang');
+          var lang = (p === 'en' || p === 'zh')
+            ? p
+            : (window.localStorage.getItem('lang') === 'zh' ? 'zh' : 'en');
+          var html = document.documentElement;
+          html.setAttribute('data-lang', lang);
+          html.setAttribute('lang', lang === 'zh' ? 'zh-CN' : 'en');
+        } catch (e) {
+          document.documentElement.setAttribute('data-lang', 'en');
+        }
+      })();
+    </script>
+
+    {% if page.redirect %}
+      {% if page.redirect == true %}
+        {% assign redirect = site.baseurl | append: '/' %}
+      {% elsif page.redirect contains '://' %}
+        {% assign redirect = page.redirect %}
+      {% else %}
+        {% assign redirect = page.redirect | relative_url %}
+      {% endif %}
+      <meta http-equiv="refresh" content="3; url={{ redirect }}">
+    {% endif %}
+    {% include head.liquid %}
+
+    {# --- Bilingual SEO hints consumed by assets/js/i18n.js --- #}
+    {# In English mode (default) the static <title>/<meta description> from #}
+    {# metadata.liquid are already English; these let i18n.js swap them in #}
+    {# Chinese mode. Fall back to the English value when no _zh variant exists. #}
+    <meta name="i18n-sitename" content="{{ site.first_name }} {{ site.last_name }}">
+    <meta name="i18n-title-en" content="{{ page.title }}">
+    <meta name="i18n-title-zh" content="{{ page.title_zh | default: page.title }}">
+    <meta name="i18n-desc-en" content="{{ page.description | default: site.description }}">
+    <meta name="i18n-desc-zh" content="{{ page.description_zh | default: page.description | default: site.description_zh }}">
+
+    {# --- 2. Bilingual chrome CSS (inlined; PurgeCSS-safe) --- #}
+    <style>
+      /* ---- Language-gated content blocks ----
+         Elements tagged data-lang="en" are English-only; data-lang="zh" are
+         Chinese-only. The active language lives on <html data-lang>. Default
+         markup state is English, so with JS disabled the English view shows. */
+      html[data-lang='zh'] [data-lang='en'] { display: none !important; }
+      html[data-lang='en'] [data-lang='zh'] { display: none !important; }
+
+      /* ---- English/Chinese "full text unavailable" notices ----
+         .i18n-notice-en shows only in English mode; .i18n-notice-zh only in
+         Chinese mode. They are rendered by Liquid only when relevant and
+         further gated here so the right one appears per language. */
+      html[data-lang='zh'] .i18n-notice-en { display: none !important; }
+      html[data-lang='en'] .i18n-notice-zh { display: none !important; }
+      .i18n-notice {
+        margin: 1.25rem 0;
+        padding: 0.6rem 0.9rem;
+        font-size: 0.9em;
+        border-left: 3px solid var(--global-divider-color, #d8d8d8);
+        color: var(--global-text-color-light, #6c757d);
+        background: var(--global-bg-color, rgba(0,0,0,0.02));
+      }
+
+      /* ---- Language availability badge / chip ----
+         Low-noise academic style: small, muted, no flags, no big color blocks.
+         `.lang-badge--muted` is the secondary (low-contrast) variant used when
+         a language's full text is missing. */
+      .lang-badge {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.35em;
+        margin-top: 0.5rem;
+        padding: 0.12rem 0.5rem;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.01em;
+        border-radius: 999px;
+        border: 1px solid var(--global-divider-color, #e2e2e2);
+        color: var(--global-text-color-light, #6c757d);
+        background: transparent;
+        white-space: normal;
+      }
+      .lang-badge--muted { opacity: 0.7; font-style: italic; }
+      .lang-badge__sep { opacity: 0.5; }
+
+      /* ---- Navbar language switcher (EN | 中文) ---- */
+      .nav-item.lang-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2rem;
+        padding-left: 0.35rem;
+      }
+      .lang-switch__btn {
+        background: none;
+        border: 0;
+        padding: 0.25rem 0.35rem;
+        font: inherit;
+        color: var(--global-text-color, inherit);
+        cursor: pointer;
+        border-radius: 4px;
+        line-height: 1.2;
+      }
+      .lang-switch__btn[aria-pressed='true'] {
+        font-weight: 600;
+        color: var(--global-theme-color, #2b72b8);
+      }
+      .lang-switch__sep { opacity: 0.4; }
+      /* Keep the switcher usable inside the collapsed mobile nav. */
+      .navbar-collapse.show .lang-switch,
+      .navbar-collapse.collapsing .lang-switch { padding-top: 0.25rem; }
+    </style>
+  </head>
+
+  <!-- Body -->
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    <!-- Header -->
+    {% include header.liquid %}
+
+    <!-- Content -->
+    <div class="container mt-5" role="main">
+      {% if page.toc and page.toc.sidebar %}
+        {% assign toc_collapse = page.toc.collapse | default: 'expanded' %}
+        {% assign toc_collapse_depth = page.toc.collapse_depth | default: '' %}
+        {% if page.toc.sidebar == 'right' %}
+          <div class="row">
+            <!-- main content area -->
+            <div class="col-sm-9">{{ content }}</div>
+            <!-- sidebar, which will move to the top on a small screen -->
+            <div class="col-sm-3">
+              <nav
+                id="toc-sidebar"
+                class="sticky-top toc toc-sidebar"
+                aria-label="Table of contents"
+                data-toc-collapse="{{ toc_collapse }}"
+                data-toc-collapse-depth="{{ toc_collapse_depth }}"
+              ></nav>
+            </div>
+          </div>
+        {% else %}
+          <div class="row">
+            <!-- sidebar, which will move to the top on a small screen -->
+            <div class="col-sm-3">
+              <nav
+                id="toc-sidebar"
+                class="sticky-top toc toc-sidebar"
+                aria-label="Table of contents"
+                data-toc-collapse="{{ toc_collapse }}"
+                data-toc-collapse-depth="{{ toc_collapse_depth }}"
+              ></nav>
+            </div>
+            <!-- main content area -->
+            <div class="col-sm-9">{{ content }}</div>
+          </div>
+        {% endif %}
+      {% else %}
+        {{ content }}
+      {% endif %}
+    </div>
+
+    <!-- Footer -->
+    {% include footer.liquid %}
+
+    <!-- JavaScripts -->
+    {% include scripts.liquid %}
+
+    {# --- 3. Bilingual engine (deferred) --- #}
+    <script defer src="{{ '/assets/js/i18n.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
+  </body>
+</html>

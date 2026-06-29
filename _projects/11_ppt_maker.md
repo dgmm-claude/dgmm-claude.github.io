@@ -1,10 +1,18 @@
 ---
-layout: page
+layout: project
 title: "AI PPT Maker"
+title_en: "AI PPT Maker"
+title_zh: "AI PPT 生成器"
 description: "Full-stack AI app · Flask backend + React frontend · powered by a MiniMax LLM"
+description_en: "Full-stack AI app · Flask backend + React frontend · powered by a MiniMax LLM"
+description_zh: "全栈 AI 应用 · Flask 后端 + React 前端 · MiniMax 大模型驱动"
 importance: 11
 category: Coursework
 related_publications: false
+translation_key: ppt-maker
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 ---
 
 > **English summary:** A full-stack AI web app that turns a topic into a ready-to-present deck. Given a topic, a MiniMax LLM generates a structured outline; the user can then edit conversationally in natural language ("change slide 2 to…"), upload a PPT/PDF as a visual template, edit slide titles/content/notes online, and export a presentable .pptx. Architecture: a Flask backend (ai / ppt / templates APIs, MiniMax service, PPT generation via python-pptx) with a React + Vite frontend. Demonstrates LLM integration, prompt-driven editing UX, and document generation in one product.

@@ -1,11 +1,26 @@
 ---
-layout: page
+layout: project
 title: "Wearable IMU Teleoperation for Unitree G1"
+title_en: "Wearable IMU Teleoperation for Unitree G1"
+title_zh: "宇树 G1 上肢 IMU 遥操系统"
 description: Calibrated multi-IMU motion mapping with analytical IK and configuration-aware safety constraints.
+description_en: Calibrated multi-IMU motion mapping with analytical IK and configuration-aware safety constraints.
+description_zh: 标定的多 IMU 运动映射 + 解析逆运动学 + 构型相关安全约束。
 img: assets/img/projects/04_g1_robot.png
 importance: 1
 category: Featured Research
 related_publications: false
+translation_key: unitree-g1-teleop
+body_lang: en        # the Markdown body below is written in English
+has_zh_content: false
+has_en_content: true
+featured_on_about: true
+related_notes:
+  - dual-arm-imu-teleop-inverse-kinematics
+  - unitree-g1-hardware-protection-anomaly
+  - unitree-g1-dynamic-joint-limit
+  - vqf-orientation-fusion-practice
+  - humanoid-self-collision-avoidance
 ---
 
 A wearable-IMU teleoperation system for the Unitree G1 humanoid's upper limbs, developed as a full **perception–estimation–control–safety** loop.

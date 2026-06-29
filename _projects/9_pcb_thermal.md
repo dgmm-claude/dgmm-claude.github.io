@@ -1,11 +1,19 @@
 ---
-layout: page
+layout: project
 title: "PCB Pad Thermal-Conduction Study"
+title_en: "PCB Pad Thermal-Conduction Study"
+title_zh: "PCB 焊盘热传导研究"
 description: "Math-physics methods course project · PDE modeling + custom FEM + ANSYS + measurement · thermal vias cut the time constant 5.5x"
+description_en: "Math-physics methods course project · PDE modeling + custom FEM + ANSYS + measurement · thermal vias cut the time constant 5.5x"
+description_zh: "数学物理方法课程项目 · PDE 建模 + 自研有限元 + ANSYS + 实测 · 热孔使时间常数缩短 5.5 倍"
 img: assets/img/projects/09_pcb_via_3d.png
 importance: 9
 category: Selected Engineering
 related_publications: false
+translation_key: pcb-thermal
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 ---
 
 > **English summary:** A mathematical-physics methods course project (independent) on how thermal vias affect a PCB pad's heating rate. A PDE heat-conduction model of the copper/FR4/via structure is solved by a self-developed 50k-node 3D finite-element code, cross-validated against ANSYS Fluent/Mechanical and against physical measurements from an STM32F103 + MAX31865 + Pt100 rig (nine datasets). A via cuts the pad time constant from 45.3 s to 8.2 s (5.5×); the two-exponential model fits with R² > 0.9999 and a design-formula MAPE < 0.2%; the custom FEM matches ANSYS within 2%; measurement uncertainty ±0.27 °C. Output: a seven-chapter, 3229-line technical document.

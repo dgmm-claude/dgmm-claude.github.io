@@ -1,0 +1,45 @@
+{%- comment -%}
+  ============================================================================
+  related_notes.liquid — "Related Notes" index for a project detail page.
+  ----------------------------------------------------------------------------
+  Reads `page.related_notes` (an array of stable IDs / translation_keys, never
+  display titles) and lists the matching notes (posts) in the AUTHOR'S order.
+  Each entry shows the current-language title & abstract, read time, date,
+  category, an availability badge, and a link. Renders NOTHING when there are no
+  matches, so projects without related notes show no empty module.
+  ============================================================================
+{%- endcomment -%}
+{%- assign has_related = false -%}
+{%- for key in page.related_notes -%}
+  {%- assign note = site.posts | where: 'translation_key', key | first -%}
+  {%- if note -%}{%- assign has_related = true -%}{%- break -%}{%- endif -%}
+{%- endfor -%}
+{%- if has_related -%}
+<div class="related-notes">
+  <hr>
+  <h2>
+    <span data-zh-text="关联笔记" data-en-text="Related Notes">Related Notes</span>
+  </h2>
+  <ul class="post-list">
+    {%- for key in page.related_notes -%}
+      {%- assign note = site.posts | where: 'translation_key', key | first -%}
+      {%- if note -%}
+        {%- assign read_time = note.content | number_of_words | divided_by: 180 | plus: 1 -%}
+    <li>
+      <h3>
+        <a class="post-title" data-zh-text="{{ note.title_zh | default: note.title }}" data-en-text="{{ note.title }}" href="{{ note.url | relative_url }}">{{ note.title }}</a>
+      </h3>
+      <p data-zh-text="{{ note.description_zh | default: note.description }}" data-en-text="{{ note.description }}">{{ note.description }}</p>
+      <p class="post-meta">
+        {{ read_time }} <span data-zh-text="分钟阅读" data-en-text="min read">min read</span> &nbsp; · &nbsp; {{ note.date | date: "%B %d, %Y" }}
+        {%- for category in note.categories -%}
+          &nbsp; · &nbsp; <i class="fa-solid fa-tag fa-sm"></i> {{ category }}
+        {%- endfor -%}
+      </p>
+      {% include lang_badge.liquid has_zh=note.has_zh_content has_en=note.has_en_content %}
+    </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</div>
+{%- endif -%}

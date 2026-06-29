@@ -9,13 +9,20 @@ last_name: Zheng
 contact_note: >
   欢迎通过邮件与我交流 / Feel free to reach out via email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  郑皓文 (Haowen Zheng) — 重庆大学国家卓越工程师学院机器人工程 / Robotics Engineering at Chongqing University.
-  系统级工程能力：从数学建模、算法设计、嵌入式固件到 PCB 硬件与系统集成测试的全链路闭环。
+  Haowen Zheng (郑皓文) — Robotics Engineering at the National Excellent Engineer
+  College, Chongqing University. System-level engineering across the full loop:
+  mathematical modeling, algorithm design, embedded firmware, PCB hardware, and
+  system integration & testing. Research focus: the robot perception–estimation–
+  control–safety loop.
+# Chinese site description (used by assets/js/i18n.js in Chinese mode for SEO).
+description_zh: >
+  郑皓文 — 重庆大学国家卓越工程师学院机器人工程。系统级工程能力：从数学建模、算法设计、
+  嵌入式固件到 PCB 硬件与系统集成测试的全链路闭环。科研聚焦机器人「感知—估计—控制—安全」闭环。
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: 郑皓文, Haowen Zheng, robotics, embedded systems, IMU, SLAM, PCB, 机器人工程, 嵌入式 # add your own keywords or leave empty
-lang: cn # the language of your site (for example: en, fr, cn, ru, etc.)
+lang: en # the language of your site (for example: en, fr, cn, ru, etc.) — site default is English; the bilingual layer (assets/js/i18n.js) toggles EN/中文.
 icon: 🤖 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://dgmm-claude.github.io # the base hostname & protocol for your site
@@ -185,6 +192,12 @@ collections:
     output: true
   teachings:
     output: true
+  # Second-language FULL TEXT bodies for bilingual projects/notes.
+  # output:false → these never generate their own public page (no duplicate
+  # URLs); they are rendered inline by _layouts/post.liquid & project.liquid via
+  # `site.i18n_content`. See the final docs for how to add a translation.
+  i18n_content:
+    output: false
 
 # -----------------------------------------------------------------------------
 # Jekyll settings

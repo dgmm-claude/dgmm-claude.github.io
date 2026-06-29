@@ -1,11 +1,20 @@
 ---
-layout: page
+layout: project
 title: "Vision-Based Dual-Stage Guidance Flight System"
+title_en: "Vision-Based Dual-Stage Guidance Flight System"
+title_zh: "基于视觉的双阶段精确制导飞行系统"
 description: National-level Innovation Training Program (PI) · Excellent conclusion · dual-stage visual guidance (launch coarse-aim + onboard fine-guide)
+description_en: National-level Innovation Training Program (PI) · Excellent conclusion · dual-stage visual guidance (launch coarse-aim + onboard fine-guide)
+description_zh: 国家级大学生创新创业训练计划（项目负责人）· 优秀结题 · 双阶段视觉制导（发射初瞄 + 弹载精导）
 img: assets/img/projects/40_guidance_vision_pcb.png
 importance: 3
 category: Featured Research
 related_publications: false
+translation_key: vision-guidance
+body_lang: en        # the Markdown body below is written in English
+has_zh_content: false
+has_en_content: true
+featured_on_about: true
 ---
 
 The 19th **National Innovation Training Program** (*Vision-Based Guidance Flight System*, Chongqing University, 2026). I served as **PI** of a 4-person team (advisor: Wang Chengliang) and the project received an **Excellent** conclusion. I owned the vision host (software + PCB hardware), the dual-stage guidance scheme, and the experimental campaign.

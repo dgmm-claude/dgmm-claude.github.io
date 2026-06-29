@@ -5,6 +5,14 @@ featured: true
 title: "Inverse Kinematics for Dual-Arm IMU Teleoperation: 4-Step Calibration to Analytical 5-DoF Solutions"
 date: 2026-06-20 21:00:00 +0800
 description: "The core algorithm of the G1 dual-arm system: turning five wireless-IMU quaternions into 10 robot joint angles in real time. A three-stage pipeline — offline 4-step calibration (Procrustes alignment with SVD plus roll-axis refinement), online incremental tracking that reduces sensitivity to absolute-heading drift, and an analytical IK that decouples rotation axes (Y-component gives shoulder roll, XZ gives pitch; Z gives elbow, XY gives yaw; palm gives wrist roll), each step with dual-solution selection and limit clamping. Smoothed by a 3.5 rad/s rate limit and sent over UDP at 50 Hz."
+description_en: "The core algorithm of the G1 dual-arm system: turning five wireless-IMU quaternions into 10 robot joint angles in real time. A three-stage pipeline — offline 4-step calibration (Procrustes alignment with SVD plus roll-axis refinement), online incremental tracking that reduces sensitivity to absolute-heading drift, and an analytical IK that decouples rotation axes (Y-component gives shoulder roll, XZ gives pitch; Z gives elbow, XY gives yaw; palm gives wrist roll), each step with dual-solution selection and limit clamping. Smoothed by a 3.5 rad/s rate limit and sent over UDP at 50 Hz."
+description_zh: "G1 双臂系统的核心算法：如何把 5 个无线 IMU 的四元数实时变成 10 个机器人关节角。三阶段管线——离线 4 步标定（SVD Procrustes 对齐加滚轴精修）、降低绝对航向漂移敏感性的在线增量跟踪、以及分离旋转轴的解析 IK（Y 分量给肩滚转、XZ 给俯仰；Z 给肘、XY 给偏航；掌心给腕滚），每步双解选择与限位 clamp。以 3.5 rad/s 限速平滑，50 Hz UDP 发送。"
+title_en: "Inverse Kinematics for Dual-Arm IMU Teleoperation: 4-Step Calibration to Analytical 5-DoF Solutions"
+title_zh: "双臂 IMU 遥操的逆运动学：4 步标定到解析 5 自由度解"
+translation_key: dual-arm-imu-teleop-inverse-kinematics
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 tags: 机器人 逆运动学 IMU 宇树G1 遥操 Procrustes
 categories: 技术详解
 ---

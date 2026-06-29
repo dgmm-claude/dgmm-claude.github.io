@@ -5,6 +5,14 @@ featured: true
 title: "Diagnosing Hardware-Protection Anomalies in Real-Robot Teleoperation"
 date: 2026-06-10 21:00:00 +0800
 description: "When the G1 right arm intermittently entered hardware protection during long teleoperation sessions, I built a full diagnostic chain: auto-segmenting anomaly windows from total motor-error peaks (peak times 0.3, over 5 s; two events of 7.2/8.2 s, peak 2.01/1.56 rad), per-joint error attribution (elbow dominates, 40 to 61 percent), PyBullet replay of the anomaly window, and physical scratch evidence — confirming the upper arm hits the mechanical limit before the software limit during elbow-clamp poses. This led to a configuration-dependent dynamic-limit fix and a patent disclosure."
+description_en: "When the G1 right arm intermittently entered hardware protection during long teleoperation sessions, I built a full diagnostic chain: auto-segmenting anomaly windows from total motor-error peaks (peak times 0.3, over 5 s; two events of 7.2/8.2 s, peak 2.01/1.56 rad), per-joint error attribution (elbow dominates, 40 to 61 percent), PyBullet replay of the anomaly window, and physical scratch evidence — confirming the upper arm hits the mechanical limit before the software limit during elbow-clamp poses. This led to a configuration-dependent dynamic-limit fix and a patent disclosure."
+description_zh: "G1 右臂在长时遥操中间歇性进入硬件保护时，我搭建了完整诊断链：从总电机误差峰值自动分割异常窗口（峰值×0.3 阈值、>5 s；两次典型事件 7.2/8.2 s，峰值 2.01/1.56 rad）、按关节归因（肘关节主导，40–61%）、PyBullet 回放异常窗口，并结合物理划痕证据——证实上臂在肘部夹持姿态下先撞机械限位再触发软件限位。由此提出构型相关的动态限位修复并形成专利交底。"
+title_en: "Diagnosing Hardware-Protection Anomalies in Real-Robot Teleoperation"
+title_zh: "真机遥操中硬件保护异常的诊断"
+translation_key: unitree-g1-hardware-protection-anomaly
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 tags: 机器人 宇树G1 遥操 异常检测 PyBullet
 categories: 工程实践
 _styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"

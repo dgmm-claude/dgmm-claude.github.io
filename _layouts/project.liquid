@@ -1,0 +1,72 @@
+---
+layout: default
+---
+{#
+  Local layout for PROJECT detail pages (`_projects/*.md` use `layout: project`).
+  Based on the theme's `page.liquid`, extended with the bilingual layer:
+    • bilingual title + abstract (English default);
+    • language-availability badge under the title;
+    • "full text unavailable" notices (per language, when a full body is missing);
+    • bilingual body with an optional second-language full text pulled from the
+      `i18n_content` collection (see _layouts/default.liquid comment);
+    • Related Notes index (from page.related_notes) rendered via related_notes.liquid.
+#}
+{% assign body_lang = page.body_lang | default: 'zh' %}
+{% assign alt_lang = '' %}
+{% if page.has_zh_content and page.has_en_content %}
+  {% if body_lang == 'en' %}{% assign alt_lang = 'zh' %}{% else %}{% assign alt_lang = 'en' %}{% endif %}
+{% endif %}
+{% assign alt_doc = nil %}
+{% if alt_lang != '' and page.translation_key %}
+  {% assign alt_doc = site.i18n_content | where: 'translation_key', page.translation_key | where: 'lang', alt_lang | first %}
+{% endif %}
+
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title"><span data-zh-text="{{ page.title_zh | default: page.title }}" data-en-text="{{ page.title }}">{{ page.title }}</span></h1>
+    <p class="post-description" data-zh-text="{{ page.description_zh | default: page.description }}" data-en-text="{{ page.description }}">{{ page.description }}</p>
+    {% include lang_badge.liquid has_zh=page.has_zh_content has_en=page.has_en_content %}
+  </header>
+
+  <article>
+    {% unless page.has_en_content %}
+      <div class="i18n-notice i18n-notice-en" role="note">
+        English full text is not available yet. The original Chinese text is shown below.
+      </div>
+    {% endunless %}
+    {% unless page.has_zh_content %}
+      <div class="i18n-notice i18n-notice-zh" role="note">
+        中文全文暂不可用，以下显示英文原文（Chinese full text is not available yet; the English original is shown below）.
+      </div>
+    {% endunless %}
+
+    {% if alt_doc %}
+      <div data-lang="{{ body_lang }}">{{ content }}</div>
+      <div data-lang="{{ alt_lang }}">{{ alt_doc.content }}</div>
+    {% else %}
+      {{ content }}
+    {% endif %}
+
+    {% if page.related_notes %}
+      {% include related_notes.liquid %}
+    {% endif %}
+  </article>
+
+  {% if page.related_publications %}
+    <h2>References</h2>
+    <div class="publications">
+      {% bibliography --cited_in_order %}
+    </div>
+  {% endif %}
+
+  {% if site.plugins contains 'al_comments' %}
+    {% include plugins/al_comments.liquid %}
+  {% endif %}
+</div>

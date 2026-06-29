@@ -1,0 +1,56 @@
+{%- comment -%}
+  Local override of theme include `latest_posts.liquid` (al_folio_core gem).
+  Makes each note title bilingual (data-zh-text) and appends an availability
+  badge. English title is rendered by default. Read behavior is otherwise
+  identical to the upstream include (used by the About "latest notes" section).
+{%- endcomment -%}
+<div class="news">
+  {% if page.latest_posts != blank %}
+    {% assign latest_posts_size = site.posts | size %}
+    <div
+      class="table-responsive"
+      {% if page.latest_posts.scrollable and latest_posts_size > 3 %}
+        style="max-height: 60vw"
+      {% endif %}
+    >
+      <table class="table table-sm table-borderless">
+        {% assign latest_posts = site.posts %}
+        {% if page.latest_posts.limit %}
+          {% assign latest_posts_limit = page.latest_posts.limit %}
+        {% else %}
+          {% assign latest_posts_limit = latest_posts_size %}
+        {% endif %}
+        {% for item in latest_posts limit: latest_posts_limit %}
+          <tr>
+            <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
+            <td>
+              {% if item.redirect == blank %}
+                <a class="news-title" data-zh-text="{{ item.title_zh | default: item.title }}" data-en-text="{{ item.title }}" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {% elsif item.redirect contains '://' %}
+                <a class="news-title" data-zh-text="{{ item.title_zh | default: item.title }}" data-en-text="{{ item.title }}" href="{{ item.redirect }}" target="_blank">{{ item.title }}</a>
+                <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9"
+                    class="icon_svg-stroke"
+                    stroke="#999"
+                    stroke-width="1.5"
+                    fill="none"
+                    fill-rule="evenodd"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              {% else %}
+                <a class="news-title" data-zh-text="{{ item.title_zh | default: item.title }}" data-en-text="{{ item.title }}" href="{{ item.redirect | relative_url }}">{{ item.title }}</a>
+              {% endif %}
+              <br>
+              {% include lang_badge.liquid has_zh=item.has_zh_content has_en=item.has_en_content %}
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  {% else %}
+    <p>No posts so far...</p>
+  {% endif %}
+</div>

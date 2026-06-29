@@ -1,10 +1,12 @@
 ---
 layout: page
-title: Research Portfolio
+title: Projects
 permalink: /projects/
-description: 研究作品集 · Research Portfolio
 nav: true
 nav_order: 2
+nav_title_zh: 项目
+description: Robotics research, embedded systems, engineering projects and coursework.
+description_zh: 机器人研究、嵌入式系统、工程项目与课程项目作品集。
 display_categories: ["Featured Research", "Selected Engineering", "Coursework"]
 horizontal: false
 ---

@@ -4,6 +4,14 @@ category: research
 title: "Reading: Self-Collision Avoidance for Humanoid Robots"
 date: 2026-06-11 21:00:00 +0800
 description: "A literature note motivated by the G1 hardware-protection anomaly. Two families of self-collision avoidance (SCA): offline planning (local minima, slow for high-DoF) and online (impedance potential from a simplified convex model, precision-versus-cost tradeoff). The key idea: collision is static given geometry and joint angles, so a differentiable collision-risk function can be learned. A 29-DoF robot is decomposed into submodules, and SVM, CPSP and NN are compared. This points toward a data-driven route beyond the current deterministic dynamic-limit fix."
+description_en: "A literature note motivated by the G1 hardware-protection anomaly. Two families of self-collision avoidance (SCA): offline planning (local minima, slow for high-DoF) and online (impedance potential from a simplified convex model, precision-versus-cost tradeoff). The key idea: collision is static given geometry and joint angles, so a differentiable collision-risk function can be learned. A 29-DoF robot is decomposed into submodules, and SVM, CPSP and NN are compared. This points toward a data-driven route beyond the current deterministic dynamic-limit fix."
+description_zh: "由 G1 硬件保护异常引发的文献笔记。自碰撞避免（SCA）两大家族：离线规划（局部极小值、高自由度下慢）与在线（基于简化凸模型的阻抗势，精度与成本权衡）。核心思想：给定几何与关节角，碰撞是静态的，因此可学习一个可微的碰撞风险函数。将 29 自由度机器人分解为子模块，比较 SVM、CPSP 与 NN。指向超越当前确定性动态限位的数据驱动路线。"
+title_en: "Reading: Self-Collision Avoidance for Humanoid Robots"
+title_zh: "阅读笔记：人形机器人自碰撞避免"
+translation_key: humanoid-self-collision-avoidance
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 tags: 机器人 自碰撞 avoidance 论文阅读 人形
 categories: 论文阅读
 _styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"

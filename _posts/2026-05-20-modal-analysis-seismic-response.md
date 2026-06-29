@@ -5,6 +5,14 @@ category: engineering
 title: "Modal Analysis and Seismic Response of a Multi-DOF Structure"
 date: 2026-05-20 10:00:00 +0800
 description: "A numerical-analysis course project: a full static, modal, and seismic-response pipeline on a five-story shear-type building. Linear systems solved by SOR (optimal relaxation around 1.65 cuts iterations from 552 to 105); the fundamental frequency found by inverse iteration in 8 steps (1.334 Hz); the first mode carries 84.7% effective mass; seismic response integrated by RK4 with 0.13 mm displacement error. Links SOR convergence, eigenvalue methods, and RK4 integration on one physical system."
+description_en: "A numerical-analysis course project: a full static, modal, and seismic-response pipeline on a five-story shear-type building. Linear systems solved by SOR (optimal relaxation around 1.65 cuts iterations from 552 to 105); the fundamental frequency found by inverse iteration in 8 steps (1.334 Hz); the first mode carries 84.7% effective mass; seismic response integrated by RK4 with 0.13 mm displacement error. Links SOR convergence, eigenvalue methods, and RK4 integration on one physical system."
+description_zh: "数值分析课程项目：在五层剪切型建筑上完成静力、模态与地震响应完整管线。线性方程组用 SOR 求解（最优松弛约 1.65，迭代次数从 552 降至 105）；基频由反幂法 8 步求得（1.334 Hz）；第一阶承载 84.7% 有效质量；地震响应用 RK4 积分，位移误差 0.13 mm。在同一物理系统上串联了 SOR 收敛、特征值方法与 RK4 积分。"
+title_en: "Modal Analysis and Seismic Response of a Multi-DOF Structure"
+title_zh: "多自由度结构的模态分析与地震响应"
+translation_key: modal-analysis-seismic-response
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 tags: 数值分析 模态分析 结构动力学 Runge-Kutta
 categories: 课程项目
 _styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"

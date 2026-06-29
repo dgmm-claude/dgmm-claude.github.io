@@ -5,6 +5,14 @@ category: engineering
 title: "Debugging FC2203S Half-Bridge MOSFET Burnout"
 date: 2026-03-21 21:00:00 +0800
 description: "A debugging log for the FC2203S half-bridge driver (open hardware). The first revision, lacking gate-protection diodes, free-wheeling diodes, and a bulk decoupling capacitor, failed quickly — NMOS body-diode breakdown, gate-drain and gate-source shorts. Investigation traced it to overly fast turn-on, residual Vs ringing partly fixed by a 100 uF capacitor, and a MOSFET rating mismatch resolved by a 60 V/80 A part and a re-tuned gate resistor; final turn-on about 400 ns. Also used by the smart-bartender pump driver."
+description_en: "A debugging log for the FC2203S half-bridge driver (open hardware). The first revision, lacking gate-protection diodes, free-wheeling diodes, and a bulk decoupling capacitor, failed quickly — NMOS body-diode breakdown, gate-drain and gate-source shorts. Investigation traced it to overly fast turn-on, residual Vs ringing partly fixed by a 100 uF capacitor, and a MOSFET rating mismatch resolved by a 60 V/80 A part and a re-tuned gate resistor; final turn-on about 400 ns. Also used by the smart-bartender pump driver."
+description_zh: "FC2203S 半桥驱动（开源硬件）的调试日志。初版缺少栅极保护二极管、续流二极管与 bulk 去耦电容，很快失效——NMOS 体二极管击穿、栅漏与栅源短路。排查定位为开通过快、Vs 残余振铃（100 µF 电容部分缓解），以及 MOSFET 耐压不匹配（改用 60 V/80 A 器件、重调栅极电阻解决），最终开通约 400 ns。智能调酒机泵驱动也使用该电路。"
+title_en: "Debugging FC2203S Half-Bridge MOSFET Burnout"
+title_zh: "FC2203S 半桥 MOSFET 烧毁调试"
+translation_key: fc2203s-half-bridge-burnout-debug
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 tags: 嵌入式 硬件 MOSFET 半桥 调酒机
 categories: 工程实践
 _styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"

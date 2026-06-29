@@ -1,0 +1,47 @@
+{%- comment -%}
+  note_card.liquid — renders ONE note (post) list item for the Notes page and
+  the legacy blog/engineering pages. Expects variable `note` (a post).
+  Bilingual title/abstract (English default), read time, date, tags & category,
+  and a language-availability badge.
+{%- endcomment -%}
+{%- assign nc_read_time = note.content | number_of_words | divided_by: 180 | plus: 1 -%}
+{%- assign nc_year = note.date | date: "%Y" -%}
+{%- assign nc_tags = note.tags | join: '' -%}
+{%- assign nc_categories = note.categories | join: '' -%}
+<li>
+  <h3>
+    {%- if note.redirect == blank -%}
+      <a class="post-title" data-zh-text="{{ note.title_zh | default: note.title }}" data-en-text="{{ note.title }}" href="{{ note.url | relative_url }}">{{ note.title }}</a>
+    {%- elsif note.redirect contains '://' -%}
+      <a class="post-title" data-zh-text="{{ note.title_zh | default: note.title }}" data-en-text="{{ note.title }}" href="{{ note.redirect }}" target="_blank">{{ note.title }}</a>
+      <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    {%- else -%}
+      <a class="post-title" data-zh-text="{{ note.title_zh | default: note.title }}" data-en-text="{{ note.title }}" href="{{ note.redirect | relative_url }}">{{ note.title }}</a>
+    {%- endif -%}
+  </h3>
+  <p data-zh-text="{{ note.description_zh | default: note.description }}" data-en-text="{{ note.description }}">{{ note.description }}</p>
+  <p class="post-meta">
+    {{ nc_read_time }} <span data-zh-text="分钟阅读" data-en-text="min read">min read</span> &nbsp; · &nbsp;
+    {{ note.date | date: '%B %d, %Y' }}
+  </p>
+  <p class="post-tags">
+    <a href="{{ nc_year | prepend: '/blog/' | relative_url }}"><i class="fa-solid fa-calendar fa-sm"></i> {{ nc_year }}</a>
+    {%- if nc_tags != '' -%}
+      &nbsp; · &nbsp;
+      {%- for tag in note.tags -%}
+        <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"><i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
+        {%- unless forloop.last -%}&nbsp;{%- endunless -%}
+      {%- endfor -%}
+    {%- endif -%}
+    {%- if nc_categories != '' -%}
+      &nbsp; · &nbsp;
+      {%- for category in note.categories -%}
+        <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}"><i class="fa-solid fa-tag fa-sm"></i> {{ category }}</a>
+        {%- unless forloop.last -%}&nbsp;{%- endunless -%}
+      {%- endfor -%}
+    {%- endif -%}
+  </p>
+  {% include lang_badge.liquid has_zh=note.has_zh_content has_en=note.has_en_content %}
+</li>

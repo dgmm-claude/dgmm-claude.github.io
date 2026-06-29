@@ -1,11 +1,19 @@
 ---
-layout: page
-title: ESP32 无线 IMU 姿态采集节点
-description: 宇树 G1 遥操系统实际采用的感知节点（已替代成品模块）· 开源 · ESP32-C3 + ICM-20948 + VQF
+layout: project
+title: "ESP32 Wireless IMU Attitude Node"
+title_en: "ESP32 Wireless IMU Attitude Node"
+title_zh: "ESP32 无线 IMU 姿态采集节点"
+description: Wireless 9-axis IMU attitude node actually used by the G1 teleoperation system (replaces the off-the-shelf module) · open-source · ESP32-C3 + ICM-20948 + VQF.
+description_en: Wireless 9-axis IMU attitude node actually used by the G1 teleoperation system (replaces the off-the-shelf module) · open-source · ESP32-C3 + ICM-20948 + VQF.
+description_zh: 宇树 G1 遥操系统实际采用的感知节点（已替代成品模块）· 开源 · ESP32-C3 + ICM-20948 + VQF
 img: assets/img/projects/实物图1.png
 importance: 6
 category: Selected Engineering
 related_publications: false
+translation_key: wireless-imu
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 ---
 
 基于 ESP32-C3 + ICM-20948 的无线九轴 IMU 姿态追踪节点，固件本地完成 VQF 融合后通过 WiFi 实时上传四元数。它是 [宇树 G1 上肢 IMU 遥操系统](/projects/1_unitree_g1_teleop/) **实际采用的感知层**——已替代原先的 WT901C485 成品 IMU 模块，独立完成并同时开源。**完整硬件设计、固件与上位机已开源。**

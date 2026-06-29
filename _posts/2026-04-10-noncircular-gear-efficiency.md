@@ -5,6 +5,14 @@ category: engineering
 title: "Efficiency Optimization of a Hand-Crank Generator with Non-Circular Gears"
 date: 2026-04-10 10:00:00 +0800
 description: "A course project showing how a non-circular gear — whose transmission ratio varies continuously with crank angle — locks the generator operating point into its high-efficiency region instead of sweeping across high and low efficiency each revolution. Driven by measured torque-speed data, the instantaneous optimal ratio is inverted from CSV logs, the pitch curve is designed to mesh with a circular gear, and a parameterized DXF is generated (ezdxf + shapely) for 3D printing. Results: efficiency spread narrowed about 73%, minimum efficiency raised from 85.67% to 92.86%."
+description_en: "A course project showing how a non-circular gear — whose transmission ratio varies continuously with crank angle — locks the generator operating point into its high-efficiency region instead of sweeping across high and low efficiency each revolution. Driven by measured torque-speed data, the instantaneous optimal ratio is inverted from CSV logs, the pitch curve is designed to mesh with a circular gear, and a parameterized DXF is generated (ezdxf + shapely) for 3D printing. Results: efficiency spread narrowed about 73%, minimum efficiency raised from 85.67% to 92.86%."
+description_zh: "课程项目：用变传动比的非圆齿轮，把发电机工作点「锁」在高效区，而非每圈在高低效之间反复横跳。基于实测扭矩-转速数据，从 CSV 反解瞬时最优传动比，设计节曲线与圆齿轮啮合，并用 ezdxf + shapely 生成参数化 DXF 供 3D 打印。结果：效率波动收窄约 73%，最低效率从 85.67% 提升至 92.86%。"
+title_en: "Efficiency Optimization of a Hand-Crank Generator with Non-Circular Gears"
+title_zh: "手摇发电机效率优化：非圆齿轮"
+translation_key: noncircular-gear-efficiency
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 tags: 非圆齿轮 机械设计 数据驱动 效率优化
 categories: 工程项目
 _styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"

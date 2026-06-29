@@ -5,6 +5,14 @@ category: engineering
 title: "Forward Derivation of Non-Circular-Gear Manufacturing (Three Pipelines)"
 date: 2026-04-25 10:00:00 +0800
 description: "The manufacturing-side companion to the non-circular-gear efficiency project: how a variable-ratio pitch curve is actually produced. Covers machining options for non-circular pitch curves (CNC hobbing, shaping, 3D printing), the geometric constraints ensuring correct meshing with the mating circular gear (module, pressure angle, pitch matching), and the practical tolerances and post-processing, with references to relevant Chinese patents on non-circular-gear shaping methods."
+description_en: "The manufacturing-side companion to the non-circular-gear efficiency project: how a variable-ratio pitch curve is actually produced. Covers machining options for non-circular pitch curves (CNC hobbing, shaping, 3D printing), the geometric constraints ensuring correct meshing with the mating circular gear (module, pressure angle, pitch matching), and the practical tolerances and post-processing, with references to relevant Chinese patents on non-circular-gear shaping methods."
+description_zh: "非圆齿轮效率项目的制造侧补充：变传动比节曲线如何实际加工。覆盖非圆节曲线的加工方式（CNC 滚齿、插齿、3D 打印）、确保与配对圆齿轮正确啮合的几何约束（模数、压力角、节圆匹配），以及实际公差与后处理，并参考非圆齿轮插齿方法的相关中国专利。"
+title_en: "Forward Derivation of Non-Circular-Gear Manufacturing (Three Pipelines)"
+title_zh: "非圆齿轮制造的正向推导（三条工艺路线）"
+translation_key: noncircular-gear-manufacturing
+body_lang: zh        # the Markdown body below is written in Chinese
+has_zh_content: true
+has_en_content: false
 tags: 非圆齿轮 制造工艺 3D打印 CNC 粉末冶金
 categories: 工程项目
 _styles: ".post-content img, #markdown-content img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border-radius: 0.375rem; } .post-content figure, #markdown-content figure { margin: 1.5em 0; text-align: center; }"
