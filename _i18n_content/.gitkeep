@@ -1,0 +1,4 @@
+# keeps the i18n_content collection directory in git.
+# (dotfile: Jekyll skips it; the collection is intentionally empty of
+#  rendered docs — bilingual full texts are added here as needed, see the
+#  project layout comments / chat guide.)
